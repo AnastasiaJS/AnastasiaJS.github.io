@@ -78,9 +78,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  branch: master
-  repo: git@github.com:AnastasiaJS/AnastasiaJS.github.io.git
+  #type: git
+  #branch: master
+  #repo: git@github.com:AnastasiaJS/AnastasiaJS.github.io.git
 
 # Local Search
 search:

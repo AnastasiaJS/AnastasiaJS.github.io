@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Anastasia的博客">
 <meta property="og:description" content="永和九年，岁在癸丑，暮春之初，会于会稽山阴之兰亭，修禊事也。群贤毕至，少长咸集。此地有崇山峻岭，茂林修竹，又有清流激湍，映带左右，引以为流觞曲水，列坐其次。虽无丝竹管弦之盛，一觞一咏，亦足以畅叙幽情。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://anastasia.github.io/uploads/avatar.jpg">
-<meta property="og:updated_time" content="2018-08-27T02:29:29.782Z">
+<meta property="og:image" content="https://anastasia.github.io/AnastasiaJ/uploads/avatar.jpg">
+<meta property="og:updated_time" content="2018-08-27T07:15:22.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="theStorage">
 <meta name="twitter:description" content="永和九年，岁在癸丑，暮春之初，会于会稽山阴之兰亭，修禊事也。群贤毕至，少长咸集。此地有崇山峻岭，茂林修竹，又有清流激湍，映带左右，引以为流觞曲水，列坐其次。虽无丝竹管弦之盛，一觞一咏，亦足以畅叙幽情。">
-<meta name="twitter:image" content="https://anastasia.github.io/uploads/avatar.jpg">
+<meta name="twitter:image" content="https://anastasia.github.io/AnastasiaJ/uploads/avatar.jpg">
 
 
 
@@ -111,8 +111,8 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '3a7337d39176aafbc75c509d43b86140',
-      apiKey: '',
+      applicationID: '6PTAQ8RRMR',
+      apiKey: '2d5c6754cfc8acd567ebc125a3457219',
       indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
@@ -134,6 +134,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e58d0321d4c95fd850bac4d296ab839c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -231,26 +241,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -389,7 +395,7 @@
 <blockquote class="blockquote-center"><br>人的一切痛苦，本质上都是对自己无能的愤怒<br>王小波<br></blockquote>
 
 <!-- 标签 方式，要求版本在0.4.5或以上 -->
-<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/uploads/avatar.jpg" class="full-image" alt="岁月" title="静好"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/AnastasiaJ/uploads/avatar.jpg" class="full-image" alt="岁月" title="静好"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
       
     </div>
     
@@ -411,7 +417,7 @@
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Anastasia 支付宝"/>
+        <img id="alipay_qr" src="/AnastasiaJ/uploads/alipay.jpg" alt="Anastasia 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -481,6 +487,11 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTI4OC8xNTgxNQ=="></div>
+    </div>
 
   
 
@@ -586,6 +597,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                link
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.behance.net/Jessie_Lee" title="behance" target="_blank">behance</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -608,7 +633,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Anastasia</span>
 
@@ -649,6 +674,12 @@
     
 
     
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
 
   </div>
 
@@ -671,12 +702,11 @@
   
 
 
-
-
-
-
   
-  
+
+
+
+
 
 
 
@@ -716,12 +746,7 @@
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/AnastasiaJ/lib/three/canvas_lines.min.js"></script>
+    <script type="text/javascript" src="/AnastasiaJ/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -777,6 +802,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1112,19 +1148,6 @@
 
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/AnastasiaJ/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/AnastasiaJ/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/AnastasiaJ/js/src/algolia-search.js?v=5.1.4"></script>
-
-
 
   
 
@@ -1240,6 +1263,31 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/AnastasiaJ/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/AnastasiaJ/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
   
 
   

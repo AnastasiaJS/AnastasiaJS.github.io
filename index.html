@@ -107,8 +107,8 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '3a7337d39176aafbc75c509d43b86140',
-      apiKey: '',
+      applicationID: '6PTAQ8RRMR',
+      apiKey: '2d5c6754cfc8acd567ebc125a3457219',
       indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
@@ -130,6 +130,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e58d0321d4c95fd850bac4d296ab839c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -228,26 +238,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -672,6 +678,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                link
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.behance.net/Jessie_Lee" title="behance" target="_blank">behance</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -694,7 +714,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Anastasia</span>
 
@@ -735,6 +755,12 @@
     
 
     
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
 
   </div>
 
@@ -757,12 +783,11 @@
   
 
 
-
-
-
-
   
-  
+
+
+
+
 
 
 
@@ -802,12 +827,7 @@
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/AnastasiaJ/lib/three/canvas_lines.min.js"></script>
+    <script type="text/javascript" src="/AnastasiaJ/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1194,19 +1214,6 @@
 
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/AnastasiaJ/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/AnastasiaJ/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/AnastasiaJ/js/src/algolia-search.js?v=5.1.4"></script>
-
-
 
   
 
@@ -1322,6 +1329,31 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/AnastasiaJ/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/AnastasiaJ/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
   
 
   

@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo+nexT主题+githubPages个人博客搭建]]></title>
+    <url>%2FAnastasiaJ%2F2018%2F08%2F29%2Fhexo-nexT%E4%B8%BB%E9%A2%98-githubPages%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[安装 node git hexo-cli npm install -g hexo-cli 建站$ hexo init &lt;folder&gt; $ cd &lt;folder&gt; $ npm install 结构说明 _config.yml 为站点配置文件 scaffolds 为模板文件夹 source 存放用户资源 themes 主题文件夹，里面也会有一个_config.yml，为主题配置文件 NexT主题安装git clone https://github.com/iissnan/hexo-theme-next themes/next这样主题文件就拷贝到themes文件夹中 设置主题站点配置文件： theme: next 站点文件配置[官方配置文档]（https://hexo.io/zh-cn/docs/configuration） deploy 部署部分的设置deploy: type: git branch: 分支名字 repo: https://github.com/github用户名/github用户名.github.io.git url配置If your site is put in a subdirectory, set url as ‘http://yoursite.com/child&#39; and root as ‘/child/‘ url: https://Anastasia.github.io root: /AnastasiaJ/ 配置好后分别执行 hexo clean hexo d -g 或者 hexo g -d 最好建一个分支，分支作为发布的博客内容，master作为构建代码，便于多台电脑发布博客 .md文件配置title: hexo+nexT主题+githubPages个人博客搭建 date: 2018-08-29 09:41:56 categories: &quot;博客搭建&quot; #分类 toc: true #是否显示文章目录 tags: -nexT -hexo -githubPages 插件 站点访问量“不蒜子” 评论系统1：Valine 评论系统2：必来力LiveRe 音乐：hexo-tag-aplayer 其他插件可参考NexT 使用文档 走过的坑仓库的名字仓库的名字的正确格式是github用户名.github.io hexo s 启动命令不识别需要安装 hexo-server 以上内容写的比较简单，主要是记录了一个主要的搭建过程，具体详细的部分都有官方文档可参考，这里不另外阐述。]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>nexT</tag>
+        <tag>hexo</tag>
+        <tag>githubPages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HEXO+NEXT主题个性化配置]]></title>
+    <url>%2FAnastasiaJ%2F2018%2F08%2F27%2FHEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[主要说明当前博客中的音乐及其他主题个性化配置 左下角音乐使用插件hexo-tag-aplayer | aplayer npm install hexo-tag-aplayer –save （aplayer） 在themes/next/layout/_custom/header 中加入以下语句，具体的可参考官方文档设置 &lt;div id=&quot;player1&quot; class=&quot;aplayer&quot;&gt;&lt;/div&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://pe5s1kztp.bkt.clouddn.com/css/APlayer.min.css&quot; /&gt; &lt;script src=&quot;http://pe5s1kztp.bkt.clouddn.com/js/APlayer.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; const apo = new APlayer({ container: document.getElementById(&apos;player1&apos;), fixed: true,//固定在左下角 autoplay: false, audio: [{ name: &apos;周杰伦&apos;, artist: &apos;水管的友情&apos;, url: &apos;http://pe5s1kztp.bkt.clouddn.com/music%E6%B0%B4%E7%AE%A1%E7%9A%84%E5%8F%8B%E6%83%85.flac&apos;, cover: &apos;http://pe5s1kztp.bkt.clouddn.com/images/employee-1118183_640.jpg&apos;, }] }); &lt;/script&gt; 其他个性化配置可参考二次元博客 :）]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>nexT</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2FAnastasiaJ%2F2018%2F08%2F27%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

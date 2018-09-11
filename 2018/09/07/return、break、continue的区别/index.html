@@ -45,6 +45,44 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -68,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -79,16 +117,18 @@
 
 
 
-<meta name="description" content="大厦千顷，眠七尺之躯，袖珍百味，不过一饱。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Anastasia的博客">
-<meta property="og:url" content="https://Anastasia.github.io/tags/tomcat/index.html">
+<meta name="description" content="break是跳出一层循环，continue是结束一趟循环 ,return才是结束所有层循环! 如果有多层for循环,break会跳出当前这一层,去执行最外层循环(而不是退出所有层循环);而continue则结束当前次循环(继续)而去执行下次循环,但本层循环没有结束.(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环) return return 从当前的方法中退出,返回到该调用的方法的语">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中return、break、continue的区别">
+<meta property="og:url" content="https://Anastasia.github.io/2018/09/07/return、break、continue的区别/index.html">
 <meta property="og:site_name" content="Anastasia的博客">
-<meta property="og:description" content="大厦千顷，眠七尺之躯，袖珍百味，不过一饱。">
+<meta property="og:description" content="break是跳出一层循环，continue是结束一趟循环 ,return才是结束所有层循环! 如果有多层for循环,break会跳出当前这一层,去执行最外层循环(而不是退出所有层循环);而continue则结束当前次循环(继续)而去执行下次循环,但本层循环没有结束.(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环) return return 从当前的方法中退出,返回到该调用的方法的语">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-07T05:58:50.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anastasia的博客">
-<meta name="twitter:description" content="大厦千顷，眠七尺之躯，袖珍百味，不过一饱。">
+<meta name="twitter:title" content="JavaScript中return、break、continue的区别">
+<meta name="twitter:description" content="break是跳出一层循环，continue是结束一趟循环 ,return才是结束所有层循环! 如果有多层for循环,break会跳出当前这一层,去执行最外层循环(而不是退出所有层循环);而continue则结束当前次循环(继续)而去执行下次循环,但本层循环没有结束.(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环) return return 从当前的方法中退出,返回到该调用的方法的语">
 
 
 
@@ -118,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="https://Anastasia.github.io/tags/tomcat/"/>
+  <link rel="canonical" href="https://Anastasia.github.io/2018/09/07/return、break、continue的区别/"/>
 
 
 
 
 
-  <title>标签: tomcat | Anastasia的博客</title>
+  <title>JavaScript中return、break、continue的区别 | Anastasia的博客</title>
   
 
 
@@ -153,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,54 +337,229 @@ const apo = new APlayer({
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>tomcat<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Anastasia.github.io/AnastasiaJ/2018/09/07/return、break、continue的区别/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anastasia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://pe5s1kztp.bkt.clouddn.com/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anastasia的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/AnastasiaJ/2018/08/24/theStorage/" itemprop="url">
-              
-                <span itemprop="name">theStorage</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JavaScript中return、break、continue的区别</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-24T11:45:05+08:00"
-              content="2018-08-24" >
-          08-24
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T13:49:28+08:00">
+                2018-09-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/AnastasiaJ/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+             <span id="/AnastasiaJ/2018/09/07/return、break、continue的区别/" class="leancloud_visitors" data-flag-title="JavaScript中return、break、continue的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>break是跳出一层循环，continue是结束一趟循环 ,return才是结束所有层循环!</strong></p>
+<p>如果有多层for循环,break会跳出当前这一层,去执行最外层循环(而不是退出所有层循环);而continue则结束当前次循环(继续)而去执行下次循环,但本层循环没有结束.(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环)</p>
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p> return 从当前的<strong>方法</strong>中退出,返回到该调用的方法的语句处,继续执行。 </p>
+<h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><ol>
+<li><strong>只能在循环体内和switch语句体内使用break语句。</strong></li>
+<li>当break出现在循环体中的switch语句体内时，其作用只是跳出该switch语句体。 </li>
+<li>当break出现在循环体中，但并不在switch语句体内时，则在执行break后，跳出本层循环体。 </li>
+<li>在循环结构中，应用break语句使流程跳出<strong>本层</strong>循环体，从而提前结束本层循环。</li>
+</ol>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p> 其作用是结束本次循环，即跳过本次循环体中余下尚未执行的语句，接着再一次进行循环的条件判定</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>哈哈哈 万一有人真的赏了呢</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://pe5s1kztp.bkt.clouddn.com/images/alipay.jpg" alt="Anastasia 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Anastasia
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://Anastasia.github.io/2018/09/07/return、break、continue的区别/" title="JavaScript中return、break、continue的区别">https://Anastasia.github.io/2018/09/07/return、break、continue的区别/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/AnastasiaJ/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/AnastasiaJ/2018/09/07/PDF-js/" rel="next" title="PDF.js">
+                <i class="fa fa-chevron-left"></i> PDF.js
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -372,8 +587,17 @@ const apo = new APlayer({
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -392,7 +616,7 @@ const apo = new APlayer({
               
                 <a href="/AnastasiaJ/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -414,7 +638,7 @@ const apo = new APlayer({
               
               <div class="site-state-item site-state-tags">
                 <a href="/AnastasiaJ/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -473,6 +697,22 @@ const apo = new APlayer({
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#return"><span class="nav-number">1.</span> <span class="nav-text">return</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break"><span class="nav-number">2.</span> <span class="nav-text">break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue"><span class="nav-number">3.</span> <span class="nav-text">continue</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -492,15 +732,6 @@ const apo = new APlayer({
   </span>
   <span class="author" itemprop="copyrightHolder">Anastasia</span>
 
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count"></span>
   
 </div>
 
@@ -639,6 +870,10 @@ const apo = new APlayer({
 
 
   
+  <script type="text/javascript" src="/AnastasiaJ/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/AnastasiaJ/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[面向对象的程序设计]]></title>
+    <url>%2FAnastasiaJ%2F2018%2F09%2F29%2F%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[所有对象均继承自 Object 创建对象的六种方法1. new Object()var person = new Object(); person.name = &quot;Nicholas&quot;; person.age = 29; person.job = &quot;Software Engineer&quot;; person.sayName = function(){ alert(this.name); }; 2. 对象字面量var person = { name: &quot;Nicholas&quot;, age: 29, job: &quot;Software Engineer&quot;, sayName: function(){ alert(this.name); } }; 3. 工厂模式function createPerson(name, age, job){ var o = new Object(); o.name = name; o.age = age; o.job = job; o.sayName = function(){ alert(this.name); }; return o; } var person1 = createPerson(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;); var person2 = createPerson(&quot;Greg&quot;, 27, &quot;Doctor&quot;); 4. 构造函数模式function Person(name, age, job){ this.name = name; this.age = age; this.job = job; this.sayName = function(){ alert(this.name); }; } var person1 = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;); var person2 = new Person(&quot;Greg&quot;, 27, &quot;Doctor&quot;); 5. 原型模式 我们创建的每个函数都有一个 prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。 function Person(){ } Person.prototype.name = &quot;Nicholas&quot;; Person.prototype.age = 29; Person.prototype.job = &quot;Software Engineer&quot;; Person.prototype.sayName = function(){ alert(this.name); }; var person1 = new Person(); person1.sayName(); //&quot;Nicholas&quot; var person2 = new Person(); person2.sayName(); //&quot;Nicholas&quot; alert(person1.sayName == person2.sayName); //true 理解原型对象(hasOwnProperty)无论什么时候，只要创建了一个新函数，就会为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性包含一个指向 prototype 属性所在函数的指针。 每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先从对象实例本身开始。如果在实例中找到了具有给定名字的属性，则返回该属性的值；如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找具有给定名字的属性。如果在原型对象中找到了这个属性，则返回该属性的值。（实例中没有才会搜索原型对象） 使用 hasOwnProperty()方法可以检测一个属性是存在于实例中，还是存在于原型中(只在给定属性存在于对象实例中时，才会返回 true)。 原型与 in 操作符(in)有两种方式使用 in 操作符：单独使用和在 for-in 循环中使用。在单独使用时，in 操作符会在通过对象能够访问给定属性时返回 true，无论该属性存在于实例中还是原型中。 更简单的原型语法function Person(){ } Person.prototype = { name : &quot;Nicholas&quot;, age : 29, job: &quot;Software Engineer&quot;, sayName : function () { alert(this.name); } }; 这里使用的语法，本质上完全重写了默认的 prototype 对象，因此 constructor 属性也就变成了新对象的 constructor 属性（指向 Object 构造函数），不再指向 Person 函数。此时，尽管 instanceof操作符还能返回正确的结果，但通过 constructor 已经无法确定对象的类型了。 原型的动态性在prototype 内添加属性、方法，不管是在实例化之前还是之后，实例化的对象都能够访问到。 但是整个原型对象重写除外。实例被创建时有一个指向原型的指针，一旦原型被重写，实例没办法指向新的原型。 function Person(){ } var friend = new Person(); Person.prototype = {//整个原型被重写 constructor: Person, name : &quot;Nicholas&quot;, age : 29, job : &quot;Software Engineer&quot;, sayName : function () { alert(this.name); } }; friend.sayName(); //error 原生对象的原型 原型模式的重要性不仅体现在创建自定义类型方面，就连所有原生的引用类型，都是采用这种模式创建的。所有原生引用类型（Object、Array、String，等等）都在其构造函数的原型上定义了方法。 原型对象的问题 它省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值. 原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。对于那些包含基本值的属性倒也说得过去，然而，对于包含引用类型值的属性来说，问题就比较突出了. function Person(){ } Person.prototype = { constructor: Person, name : &quot;Nicholas&quot;, age : 29, job : &quot;Software Engineer&quot;, friends : [&quot;Shelby&quot;, &quot;Court&quot;], sayName : function () { alert(this.name); } }; var person1 = new Person(); var person2 = new Person(); person1.friends.push(&quot;Van&quot;); alert(person1.friends); //&quot;Shelby,Court,Van&quot; alert(person2.friends); //&quot;Shelby,Court,Van&quot; alert(person1.friends === person2.friends); //true 6. 组合使用构造函数模式和原型模式比较 1、2两种方法，对于创建很多相同结构对象的时候，不会产生冗余代码；构造函数相对于工厂模式的优势在于能够使用 constructor 属性 及 instanceof 操作符去识别对象。instanceof比constructor更准确，在prototype被重写的情况下，constructor不能确定对象的类型。 alert(person1.constructor == Person); //true alert(person1 instanceof Object); //true alert(person1 instanceof Person); //true]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[js生成UUID]]></title>
     <url>%2FAnastasiaJ%2F2018%2F09%2F14%2Fjs%E7%94%9F%E6%88%90UUID%2F</url>
     <content type="text"><![CDATA[什么是UUID UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写，是一种软件建构的标准，亦为开放软件基金会组织在分布式计算环境领域的一部分。其目的，是让分布式系统中的所有元素，都能有唯一的辨识信息，而不需要通过中央控制端来做辨识信息的指定。如此一来，每个人都可以创建不与其它人冲突的UUID。在这样的情况下，就不需考虑数据库创建时的名称重复问题。目前最广泛应用的UUID，是微软公司的全局唯一标识符（GUID），而其他重要的应用，则有Linux ext2/ext3文件系统、LUKS加密分区、GNOME、KDE、Mac OS X等等。另外我们也可以在e2fsprogs包中的UUID库找到实现。 JS生成// 生成uuid function generateUUID() { var d = new Date().getTime(); if (window.performance &amp;&amp; typeof window.performance.now === &quot;function&quot;) { d += performance.now(); //use high-precision timer if available } var uuid = &apos;xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx&apos;.replace(/[xy]/g, function (c) { var r = (d + Math.random() * 16) % 16 | 0; d = Math.floor(d / 16); return (c == &apos;x&apos; ? r : (r &amp; 0x3 | 0x8)).toString(16); }); return uuid; }]]></content>
@@ -56,8 +64,8 @@
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>nexT</tag>
+        <tag>hexo</tag>
         <tag>githubPages</tag>
       </tags>
   </entry>
@@ -69,8 +77,8 @@
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>nexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>

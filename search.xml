@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[99]]></title>
+    <url>%2F99%2F2019%2F02%2F27%2F</url>
+    <content type="text"><![CDATA[5525555]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[文本溢出显示的几中写法]]></title>
     <url>%2F%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E7%9A%84%E5%87%A0%E4%B8%AD%E5%86%99%E6%B3%95%2F2018%2F12%2F27%2F</url>
     <content type="text"><![CDATA[单行文本溢出（整行）效果： html1&lt;div class=&quot;test&quot;&gt;This is some long text that will not fit in the box&lt;/div&gt; css1234567div.test&#123; white-space:nowrap; width:12em; overflow:hidden; border:1px solid #000000; text-overflow:ellipsis;&#125; 非整行文本溢出效果： html12345678&lt;div class=&apos;table&apos;&gt; &lt;div class=&quot;test label&quot;&gt;姓名：&lt;/div&gt; &lt;div class=&quot;test value&quot;&gt;Anastasia&lt;/div&gt;&lt;/div&gt;&lt;div class=&apos;table&apos;&gt; &lt;div class=&quot;test label&quot;&gt;地址：&lt;/div&gt; &lt;div class=&quot;test value&quot;&gt;This is some long textThis is some long textThis is some long text&lt;/div&gt;&lt;/div&gt; css123456789101112131415161718div.table&#123; display:table; table-layout:fixed; border:solid 1px red; width:15em; &#125;div.test&#123; display:table-cell;&#125;div.label&#123; width:4em&#125;div.value&#123; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; &#125; 这里的几种设置和第一种是一样的，同样需要设置white-space、width、overflow，但由于用到了table的布局方式，table td的流动性，表格的宽度是跟随单元格内容多少自动计算尺寸，所以这里需要给table添加table-layout:fixed。 多行溢出（谷歌浏览器）效果 html1&lt;div class=&quot;test&quot; style=&quot;-webkit-box-orient:vertical;&quot;&gt;This is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long text&lt;/div&gt; css（注意css书写的顺序）123456789div&#123; text-overflow: ellipsis; overflow: hidden; margin: auto; width: 20em; //指定宽度 -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; //指定显示多少行&#125;]]></content>

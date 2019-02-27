@@ -40,7 +40,7 @@
 
   
   
-  <link href="/AnastasiaJ/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -86,21 +86,21 @@
 
 
 
-<link href="/AnastasiaJ/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/AnastasiaJ/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/AnastasiaJ/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/AnastasiaJ/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/AnastasiaJ/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/AnastasiaJ/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -121,7 +121,7 @@
 <meta name="keywords" content="react,react-dnd,拖拽">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拖拽组件：react-dnd">
-<meta property="og:url" content="https://Anastasia.github.io/2018/12/19/拖拽组件：react-dnd/index.html">
+<meta property="og:url" content="https://Anastasia.github.io/AnastasiaJ/2018/12/19/拖拽组件：react-dnd/index.html">
 <meta property="og:site_name" content="Anastasia的博客">
 <meta property="og:description" content="从昨天下午在弄一个关于拖拽的问题，实在有点心烦，先暂停下来，认真梳理一下关于这个组件的知识。   全文参考了silkshdow的文章， 原文地址 核心API DragSource 用于包装你需要拖动的组件，使组件能够被拖拽（make it draggable） DropTarget 用于包装接收拖拽元素的组件，使组件能够放置（dropped on it） DragDropContex 用于包装拖">
 <meta property="og:locale" content="zh-Hans">
@@ -135,7 +135,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/AnastasiaJ/',
+    root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -158,7 +158,7 @@
 
 
 
-  <link rel="canonical" href="https://Anastasia.github.io/2018/12/19/拖拽组件：react-dnd/"/>
+  <link rel="canonical" href="https://Anastasia.github.io/AnastasiaJ/2018/12/19/拖拽组件：react-dnd/"/>
 
 
 
@@ -202,7 +202,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/AnastasiaJ/"  class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Anastasia的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -230,7 +230,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/AnastasiaJ/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -240,7 +240,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/AnastasiaJ/archives/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -250,7 +250,7 @@
       
         
         <li class="menu-item menu-item-音乐">
-          <a href="/AnastasiaJ/音乐/" rel="section">
+          <a href="/音乐/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
             
@@ -260,7 +260,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/AnastasiaJ/about/" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -322,8 +322,8 @@ const apo = new APlayer({
     audio: [{
         name: '周杰伦',
         artist: '水管的友情',
-        url: '/AnastasiaJ/uploads/水管的友情.flac',
-        cover: '/AnastasiaJ/uploads/水管的友情.jpg',
+        url: '/uploads/水管的友情.flac',
+        cover: '/uploads/水管的友情.jpg',
     }]
 });
 </script>
@@ -356,7 +356,7 @@ const apo = new APlayer({
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anastasia">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/AnastasiaJ/uploads/avatar.jpg">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -403,7 +403,7 @@ const apo = new APlayer({
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/AnastasiaJ/categories/javascript/" itemprop="url" rel="index">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
                     <span itemprop="name">javascript</span>
                   </a>
                 </span>
@@ -418,7 +418,7 @@ const apo = new APlayer({
 
           
           
-             <span id="/AnastasiaJ/2018/12/19/拖拽组件：react-dnd/" class="leancloud_visitors" data-flag-title="拖拽组件：react-dnd">
+             <span id="/2018/12/19/拖拽组件：react-dnd/" class="leancloud_visitors" data-flag-title="拖拽组件：react-dnd">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -546,7 +546,7 @@ const apo = new APlayer({
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Anastasia.github.io/2018/12/19/拖拽组件：react-dnd/" title="拖拽组件：react-dnd">https://Anastasia.github.io/2018/12/19/拖拽组件：react-dnd/</a>
+    <a href="https://Anastasia.github.io/AnastasiaJ/2018/12/19/拖拽组件：react-dnd/" title="拖拽组件：react-dnd">https://Anastasia.github.io/AnastasiaJ/2018/12/19/拖拽组件：react-dnd/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -561,11 +561,11 @@ const apo = new APlayer({
       
         <div class="post-tags">
           
-            <a href="/AnastasiaJ/tags/react/" rel="tag"># react</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
-            <a href="/AnastasiaJ/tags/react-dnd/" rel="tag"># react-dnd</a>
+            <a href="/tags/react-dnd/" rel="tag"># react-dnd</a>
           
-            <a href="/AnastasiaJ/tags/拖拽/" rel="tag"># 拖拽</a>
+            <a href="/tags/拖拽/" rel="tag"># 拖拽</a>
           
         </div>
       
@@ -578,7 +578,7 @@ const apo = new APlayer({
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/AnastasiaJ/2018/11/22/面试整理——一/" rel="next" title="面试整理——一">
+              <a href="/2018/11/22/面试整理——一/" rel="next" title="面试整理——一">
                 <i class="fa fa-chevron-left"></i> 面试整理——一
               </a>
             
@@ -588,7 +588,7 @@ const apo = new APlayer({
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/AnastasiaJ/2018/12/21/antd-table中集成react-dnd/" rel="prev" title="antd-table中集成react-dnd">
+              <a href="/2018/12/21/antd-table中集成react-dnd/" rel="prev" title="antd-table中集成react-dnd">
                 antd-table中集成react-dnd <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -653,7 +653,7 @@ const apo = new APlayer({
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/AnastasiaJ/uploads/avatar.jpg"
+                src="/uploads/avatar.jpg"
                 alt="Anastasia" />
             
               <p class="site-author-name" itemprop="name">Anastasia</p>
@@ -665,7 +665,7 @@ const apo = new APlayer({
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/AnastasiaJ/archives/">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
@@ -677,7 +677,7 @@ const apo = new APlayer({
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/AnastasiaJ/categories/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -688,7 +688,7 @@ const apo = new APlayer({
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/AnastasiaJ/tags/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -867,69 +867,69 @@ const apo = new APlayer({
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/AnastasiaJ/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/AnastasiaJ/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/AnastasiaJ/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/AnastasiaJ/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/AnastasiaJ/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/AnastasiaJ/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/AnastasiaJ/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/AnastasiaJ/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -979,7 +979,7 @@ const apo = new APlayer({
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/AnastasiaJ/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
@@ -1405,11 +1405,11 @@ const apo = new APlayer({
   
   
   
-  <link rel="stylesheet" href="/AnastasiaJ/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
   
   
-  <script src="/AnastasiaJ/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     

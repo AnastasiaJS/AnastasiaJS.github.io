@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>HEXO+NEXT主题个性化配置</title>
+    <url>/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/2018/08/27/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>主要说明当前博客中的音乐及其他主题个性化配置</p>
+<span id="more"></span>
+<h3 id="左下角音乐"><a href="#左下角音乐" class="headerlink" title="左下角音乐"></a>左下角音乐</h3><p><em>使用插件hexo-tag-aplayer | aplayer</em></p>
+<ol>
+<li>npm install hexo-tag-aplayer –save （aplayer）</li>
+<li>在themes&#x2F;next&#x2F;layout&#x2F;_custom&#x2F;header 中加入以下语句，具体的可参考官方文档设置<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;player1&quot; class=&quot;aplayer&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://pe5s1kztp.bkt.clouddn.com/css/APlayer.min.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;http://pe5s1kztp.bkt.clouddn.com/js/APlayer.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">const apo = new APlayer(&#123;</span><br><span class="line">    container: document.getElementById(&#x27;player1&#x27;),</span><br><span class="line">    fixed: true,//固定在左下角</span><br><span class="line">    autoplay: false,</span><br><span class="line">    audio: [&#123;</span><br><span class="line">        name: &#x27;周杰伦&#x27;,</span><br><span class="line">        artist: &#x27;水管的友情&#x27;,</span><br><span class="line">        url: &#x27;http://pe5s1kztp.bkt.clouddn.com/music%E6%B0%B4%E7%AE%A1%E7%9A%84%E5%8F%8B%E6%83%85.flac&#x27;,</span><br><span class="line">        cover: &#x27;http://pe5s1kztp.bkt.clouddn.com/images/employee-1118183_640.jpg&#x27;,</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="其他个性化配置可参考"><a href="#其他个性化配置可参考" class="headerlink" title="其他个性化配置可参考"></a>其他个性化配置可参考</h3><p><a href="http://mashirosorata.vicp.io/">二次元博客 :）</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>nexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS之操作符</title>
+    <url>/JS%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%AC%A6/2018/09/06/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录JS操作符一些重要并容易被忽略的一些用法</p>
+<span id="more"></span>
+<h2 id="与（-）操作"><a href="#与（-）操作" class="headerlink" title="与（&amp;&amp;）操作"></a>与（&amp;&amp;）操作</h2><p><img src="http://pe5s1kztp.bkt.clouddn.com/images/%E9%80%BB%E8%BE%91%E4%B8%8E%E7%9A%84%E7%9C%9F%E5%80%BC%E8%A1%A8.jpg" alt="真值表" title="逻辑与真值表"></p>
+<p>逻辑与操作属于<code>短路操作</code>，即如果第一个操作数能够决定结果，那么就不会再对第二个操作数求值,即第一个操作数为false的时候。</p>
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var found = true;</span><br><span class="line">var result = (found &amp;&amp; someUndefinedVariable); // 这里会发生错误</span><br><span class="line">alert(result); // 这一行不会执行</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><em><code>若开始found为false，则无论第二个操作符是什么，最后都会执行result为false</code></em></p>
+<h2 id="或（-）操作"><a href="#或（-）操作" class="headerlink" title="或（||）操作"></a>或（||）操作</h2><p>与逻辑与操作符相似，逻辑或操作符也是<code>短路操作符</code>。也就是说，如果第一个操作数的求值结果为true，就不会对第二个操作数求值了。</p>
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var found = true;</span><br><span class="line">var result = (found || someUndefinedVariable); // 不会发生错误</span><br><span class="line">alert(result); // 会执行（&quot;true&quot;）</span><br></pre></td></tr></table></figure>
+
+<h2 id="加"><a href="#加" class="headerlink" title="加"></a>加</h2><p><code>只要有一个是字符串，另一个也默认转成字符串拼接</code></p>
+<ul>
+<li>‘5’+null&#x3D; 5null</li>
+<li>5+null&#x3D; 5</li>
+<li>5+undefined&#x3D; NaN</li>
+</ul>
+<p>1、有一个是字符串，那么另外一个也会转换为字符串进行拼接。假如一个是字符串，另外一个是null或者undefined，那么相加，null或者undefined就会调用String()方法，获得字符串“null”或者“undefined”，然后进行拼接。</p>
+<p>2、假如一个数字加null或者undefined，那么还是把null或者undefined进行Number()转换之后再相加。</p>
+<p>3、剩下的原则和其他的差不多，就不多说了。</p>
+<h2 id="乘"><a href="#乘" class="headerlink" title="乘"></a>乘</h2><p>在处理特殊值的情况下，乘法操作符遵循下列特殊的规则：</p>
+<ul>
+<li>如果有一个操作数是 NaN，则结果是 NaN；</li>
+<li>如果是 Infinity 与 0 相乘，则结果是 NaN；</li>
+<li>如果是 Infinity 与非 0 数值相乘，则结果是 Infinity 或-Infinity，取决于有符号操作数<br>的符号；</li>
+<li>如果是 Infinity 与 Infinity 相乘，则结果是 Infinity；</li>
+<li>如果有一个操作数不是数值，则在后台调用 <code>Number()</code>将其转换为数值，然后再应用上面的规则。</li>
+</ul>
+<h2 id="减"><a href="#减" class="headerlink" title="减"></a>减</h2><p>将结果转换成数值运算</p>
+<p>如果操作数是对象，则调用对象<code>valueOf</code>方法，如果结果是NaN那么结果就是NaN。如果没有valueOf方法，那么调用<code>toString()</code>方法，并将得到的字符串转换为数值。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>除了加法以外，几乎都是，只要有一个操作数是数值，另一个也默认使用Number()进行数字转换</code></p>
+<h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>规则与<em>乘</em>类似，总之按照正常的运算逻辑来…</p>
+<p>有逻辑不通的请一律参考<em>乘</em>的特殊规则</p>
+<p>其中：</p>
+<ul>
+<li>0&#x2F;0&#x3D;&#x3D;NaN</li>
+</ul>
+<h3 id="取余、求模"><a href="#取余、求模" class="headerlink" title="取余、求模"></a>取余、求模</h3><ul>
+<li>0%0&#x3D;&#x3D;NaN</li>
+</ul>
+<h3 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h3><p>统一返回true或者false</p>
+<pre><code>`如果比较的两个数都是字符串，那么会比较字符串对应的字符串编码值。`
+</code></pre>
+<hr>
+<h2 id="几个Number-转化取值："><a href="#几个Number-转化取值：" class="headerlink" title="几个Number()转化取值："></a>几个Number()转化取值：</h2><ul>
+<li>Number(null)&#x3D;&#x3D;0</li>
+<li>Number(undefined)&#x3D;&#x3D;NaN</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之前对运算的概念比较模糊，遇到正常的值还好，一旦遇到undefined、null这类特殊的预算就完全懵，其实对于有数字的运算，无外乎几种结果：数值、NaN、Infinity，加法才可能产生字符串的结果。</p>
+<p>最后，本文写的过程中也学习了,这篇文章 <a href="https://www.haorooms.com/post/js_czf_mst">js操作符类型转换大全（前端面试题之操作符）</a></p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>操作符</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PDF.js</title>
+    <url>/PDF-js/2018/09/07/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PDF-js介绍"><a href="#PDF-js介绍" class="headerlink" title="PDF.js介绍"></a>PDF.js介绍</h1><p>PDF.js 是基于开放的 HTML5 及 JavaScript 技术实现的开源产品。简单说就是一个 PDF 解析器。</p>
+<p>最初使用这个东西的原因是公司技术总监说要做一个打印模板设计器。本公司的产品有很多内容都是需要打印的，且每个打印的内容页面设计是不一样的，导致每次实现打印页面的时候就要单独写一个HTML页面，部分还涉及到小票的套打，很繁琐。因此，需要做一个打印设计器，方便每次打印页面的生成，具体我也不知道是怎么弄的。。。后台开发将设计好的内容以buffer的形式传给前端显示，前端这边需要做的就是将<code>buffer内容用PDF显示出来</code>。</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="http://mozilla.github.io/pdf.js/">官网地址</a></p>
+<h1 id="显示-buffer-内容"><a href="#显示-buffer-内容" class="headerlink" title="显示 buffer 内容"></a>显示 buffer 内容</h1><ol>
+<li>将viewer.js文件中的变量 DEFAULT_URL 删除</li>
+<li>在viewer.html中重新定义DEFAULT_URL,我们在这里做buffer的转换，<code>必须把buffer转换成Uint8Array类型</code>，这样pdf.js才能直接解析。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    let  = &quot;&quot;;//注意，删除的变量在这里重新定义</span><br><span class="line">    let PDFData = window.sessionStorage.pdf;</span><br><span class="line">    let rawLength = PDFData.length;</span><br><span class="line">    //转换成pdf.js能直接解析的Uint8Array类型,见pdf.js-4068</span><br><span class="line">    let array = new Uint8Array(new ArrayBuffer(rawLength));</span><br><span class="line">    for(i = 0; i &lt; rawLength; i++) &#123;</span><br><span class="line">        array[i] = PDFData.charCodeAt(i) &amp; 0xff;</span><br><span class="line">    &#125;</span><br><span class="line">    DEFAULT_URL = array;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+这段代码中我将buffer保存在浏览器本地传过来的，因为是在react项目中使用，我没有想到更好的办法将react组件中产生的内容传递到HTML页面中。。。。</li>
+</ol>
+<p>以上代码要放在<code>&lt;script src=&quot;viewer.js&quot;&gt;&lt;/script&gt;</code>前面。</p>
+<p>至此，内容应该是可以显示了。</p>
+<h1 id="直接弹出打印预览窗口"><a href="#直接弹出打印预览窗口" class="headerlink" title="直接弹出打印预览窗口"></a>直接弹出打印预览窗口</h1><p>前面说过，公司产品有很多内容都是需要打印的，客户不会太愿意在打开PDF预览界面之后手动点击打印按钮去打印，然后弹出打印预览窗口，还要点击打印，从打印机打印出来，这对客户来说<code>打印</code>需要执行的操作付出的代价过大了，所以为了更好的客户体验，在PDF页面渲染完成后直接弹出打印预览界面。</p>
+<h2 id="PDF-js重写了浏览器本身的打印方法"><a href="#PDF-js重写了浏览器本身的打印方法" class="headerlink" title="PDF.js重写了浏览器本身的打印方法"></a>PDF.js重写了浏览器本身的打印方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//viewer.js</span><br><span class="line">document.getElementById(&#x27;print&#x27;).addEventListener(&#x27;click&#x27;,</span><br><span class="line">    SecondaryToolbar.printClick.bind(SecondaryToolbar));</span><br></pre></td></tr></table></figure>
+<h2 id="RenderingStates-渲染状态"><a href="#RenderingStates-渲染状态" class="headerlink" title="RenderingStates 渲染状态"></a>RenderingStates 渲染状态</h2><p>viewer.js 中有RenderingStates来表示渲染的状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var RenderingStates = &#123;</span><br><span class="line">    INITIAL: 0,</span><br><span class="line">    RUNNING: 1,</span><br><span class="line">    PAUSED: 2,</span><br><span class="line">    FINISHED: 3</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>错误：<br>    首先想到在<code>view.renderingState === RenderingStates.FINISHED</code>的时候执行，即</p>
+<pre><code><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">isViewFinished: function PDFRenderingQueue_isViewFinished(view) &#123;</span><br><span class="line">    &lt;!-- 添加打印代码 --&gt;</span><br><span class="line">    if(view.renderingState === RenderingStates.FINISHED &amp;&amp; sessionStorage.isPrint === &#x27;true&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;print&#x27;).click()</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;!-- 添加打印代码 end--&gt;</span><br><span class="line">    return view.renderingState === RenderingStates.FINISHED;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>然后在加载页面多的时候会有这样的提示<br><img src="http://pe5s1kztp.bkt.clouddn.com/images/PDF%E8%AD%A6%E5%91%8A.jpg" alt="img" title="PDF未完全加载已供打印"></p>
+<p>嗯&#x3D;&#x3D;，然后我实在没有找到很合适的地方去调用打印的这个方法，最后在这里加上的<br><img src="/uploads/PDFRenderingQueue_getHighestPriority%E9%87%8C%E9%9D%A2%E7%82%B9%E5%87%BB%E6%89%93%E5%8D%B0.jpg" alt="img"><br>在PDFRenderingQueue原型里面的PDFRenderingQueue_getHighestPriority方法里调用</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (sessionStorage.isPrint === &#x27;true&#x27;) &#123;</span><br><span class="line">               document.getElementById(&#x27;print&#x27;).click();</span><br><span class="line">               sessionStorage.isPrint=false;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样以后，‘PDF未完全加载已供打印’的提示没有的，打印页面也正常了。</p>
+<p>注意<code>sessionStorage.isPrint=false;</code>这个控制语句要加上，不然即使点击了取消打印预览窗口，该窗口还是会不断弹出来。</p>
+<h2 id="实现类似直接打印效果（不预览）"><a href="#实现类似直接打印效果（不预览）" class="headerlink" title="实现类似直接打印效果（不预览）"></a>实现类似直接打印效果（不预览）</h2><p> <strong>思路：将弹出窗口的尺寸放到最小，打印完成后，自动将窗口关闭</strong><br>1.	创建谷歌浏览器快捷方式（下次要从快捷方式打开）<br>2.	快捷方式，右击-&gt;属性-&gt;目标 的尾部添加  –kiosk-printing 注意前面有空格 <img src="/uploads/add--kiosk-printing.png" alt="img"><br> <strong>实际上，这步之后，window.print(),就不会弹出预览窗口了</strong><br>3. pdfjs里面有对 <strong>beforeprint</strong>和 <strong>afterprint</strong>两个方法监听，只需在afterprint方法里面将窗口关闭就可。</p>
+<p>以上只针对一些项目需要的功能进行处理。</p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>PDF.js</tag>
+        <tag>PDF解析器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Promise方法</title>
+    <url>/Promise%E6%96%B9%E6%B3%95/2019/12/24/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="polyfill初级"><a href="#polyfill初级" class="headerlink" title="polyfill初级"></a>polyfill初级</h2><pre><code>class MyPomise &#123;
+constructor(handle)&#123;
+    if(typeof handle!==&#39;function)&#123;
+        throw new Error(&#39;MyPromise must accept a function as a parameter&#39;)
+    &#125;
+    //添加状态
+    this._status=&#39;PENDING&#39;
+    //添加值
+    this._val=undefined
+
+    // 执行handle
+    try&#123;
+        handle(this._resolve.bind(this),this._reject.bind(this))
+    &#125;catch(err)&#123;
+        this.reject(err)
+    &#125;
+&#125;
+    _resolve(val)&#123;
+        if(this._status!==&#39;PENDING&#39;)&#123;
+            return
+        &#125;
+        this._status=&#39;FULFILLED&#39;
+        this._val=val
+    &#125;
+    _reject(err)&#123;
+        if(this._status!==&#39;PENDING&#39;)&#123;
+            return
+        &#125;
+        this._status=&#39;REJECTED&#39;
+        this._val=err
+    &#125;
+&#125;
+</code></pre>
+<h2 id="polyfill中级"><a href="#polyfill中级" class="headerlink" title="polyfill中级"></a>polyfill中级</h2>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>Promise</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>antd-table中集成react-dnd</title>
+    <url>/antd-table%E4%B8%AD%E9%9B%86%E6%88%90react-dnd/2018/12/21/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> [ant-design官网表格排序例子(<a href="https://ant.design/components/table-cn/#components-table-demo-drag-sorting">https://ant.design/components/table-cn/#components-table-demo-drag-sorting</a>)</p>
+<h1 id="重写Table组件里的component"><a href="#重写Table组件里的component" class="headerlink" title="重写Table组件里的component"></a>重写Table组件里的component</h1><p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class DragSortingTable extends React.Component &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    data: [...],</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  components = &#123;</span><br><span class="line">    body: &#123;</span><br><span class="line">      row: DragableBodyRow,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  moveRow = (dragIndex, hoverIndex) =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Table</span><br><span class="line">        columns=&#123;columns&#125;</span><br><span class="line">        dataSource=&#123;this.state.data&#125;</span><br><span class="line">        components=&#123;this.components&#125;</span><br><span class="line">        onRow=&#123;(record, index) =&gt; (&#123;</span><br><span class="line">          index,</span><br><span class="line">          moveRow: this.moveRow,</span><br><span class="line">        &#125;)&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中主要代码是<code>components=&#123;this.components&#125;</code>用来覆盖默认的 table 元素，拖动行则需要对row重写：<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    body: &#123;</span><br><span class="line">    row: DragableBodyRow,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>DragableBodyRow为： </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const DragableBodyRow = DropTarget(&#x27;row&#x27;, rowTarget, (connect, monitor) =&gt; (&#123;</span><br><span class="line">  connectDropTarget: connect.dropTarget(),</span><br><span class="line">&#125;))(</span><br><span class="line">  DragSource(&#x27;row&#x27;, rowSource, (connect, monitor) =&gt; (&#123;</span><br><span class="line">    connectDragSource: connect.dragSource(),</span><br><span class="line">    dragRow: monitor.getItem(),</span><br><span class="line">  &#125;))(BodyRow)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>DropTarget和DragSource 是高阶组件.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class BodyRow extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    const &#123;</span><br><span class="line">      connectDragSource,</span><br><span class="line">      connectDropTarget,</span><br><span class="line">      ...restProps</span><br><span class="line">    &#125; = this.props;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    return connectDragSource(</span><br><span class="line">      connectDropTarget(</span><br><span class="line">        &lt;tr</span><br><span class="line">          &#123;...restProps&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      )</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>react-dnd</tag>
+        <tag>ant-design</tag>
+        <tag>table</tag>
+        <tag>拖拽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>apidoc自动生成api接口文档</title>
+    <url>/apidoc%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/2019/04/24/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://www.jianshu.com/p/9353d5cc1ef8">【ApiDoc】官方文档(翻译)</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>npm install apidoc -g
+</code></pre>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><pre><code>pidoc -i myapp/ -o apidoc/ -t mytemplate/
+</code></pre>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="添加apidoc-json"><a href="#添加apidoc-json" class="headerlink" title="添加apidoc.json"></a>添加apidoc.json</h2><pre><code>    &#123;
+    &quot;name&quot;: &quot;example&quot;,
+    &quot;version&quot;: &quot;0.1.0&quot;,
+    &quot;description&quot;: &quot;apiDoc basic example&quot;,
+    &quot;title&quot;: &quot;Custom apiDoc browser title&quot;,
+    &quot;url&quot; : &quot;https://api.github.com/v1&quot;
+    &#125;
+</code></pre>
+<h2 id="直接在package-json中配置"><a href="#直接在package-json中配置" class="headerlink" title="直接在package.json中配置"></a>直接在package.json中配置</h2><pre><code>&#123;
+    &quot;name&quot;: &quot;example&quot;,
+    &quot;version&quot;: &quot;0.1.0&quot;,
+    &quot;description&quot;: &quot;apiDoc basic example&quot;,
+    &quot;apidoc&quot;: &#123;
+        &quot;title&quot;: &quot;Custom apiDoc browser title&quot;,
+        &quot;url&quot; : &quot;https://api.github.com/v1&quot;
+    &#125;
+&#125;
+</code></pre>
+<h1 id="在项目代码中添加注释"><a href="#在项目代码中添加注释" class="headerlink" title="在项目代码中添加注释"></a>在项目代码中添加注释</h1><p><strong>demo</strong></p>
+<pre><code>/** 
+* @api &#123;get&#125; /user/:id Request User information 
+* @apiName GetUser 
+* @apiGroup User 
+* 
+* @apiParam &#123;Number&#125; id Users unique ID. 
+* 
+* @apiSuccess &#123;String&#125; firstname Firstname of the User. 
+* @apiSuccess &#123;String&#125; lastname Lastname of the User. 
+*/
+</code></pre>
+<p>具体其他的apidoc注释参数参考官网或者文章顶部的中文翻译链接   </p>
+]]></content>
+      <categories>
+        <category>RESTful</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>canvas 生成图片并保存</title>
+    <url>/canvas-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E5%B9%B6%E4%BF%9D%E5%AD%98/2019/03/01/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo+nexT主题+githubPages个人博客搭建</title>
+    <url>/hexo-nexT%E4%B8%BB%E9%A2%98-githubPages%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/2018/08/29/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><span id="more"></span>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>node</li>
+<li>git</li>
+<li>hexo-cli<ul>
+<li>npm install -g hexo-cli</li>
+</ul>
+</li>
+</ul>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="结构说明"><a href="#结构说明" class="headerlink" title="结构说明"></a>结构说明</h3><ul>
+<li>_config.yml 为站点配置文件</li>
+<li>scaffolds 为模板文件夹</li>
+<li>source 存放用户资源</li>
+<li>themes 主题文件夹，里面也会有一个_config.yml，为主题配置文件</li>
+</ul>
+<h4 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h4><h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>   这样主题文件就拷贝到themes文件夹中</p>
+<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><p>   站点配置文件：</p>
+<pre><code>    theme: next
+</code></pre>
+<h2 id="站点文件配置"><a href="#站点文件配置" class="headerlink" title="站点文件配置"></a>站点文件配置</h2><p><a href="https://hexo.io/zh-cn/docs/configuration">官方配置文档</a></p>
+<h3 id="deploy-部署部分的设置"><a href="#deploy-部署部分的设置" class="headerlink" title="deploy 部署部分的设置"></a>deploy 部署部分的设置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">branch: 分支名字</span><br><span class="line">repo: https://github.com/github用户名/github用户名.github.io.git</span><br></pre></td></tr></table></figure>
+<h3 id="url配置"><a href="#url配置" class="headerlink" title="url配置"></a>url配置</h3><p>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child">http://yoursite.com/child</a>‘ and root as ‘&#x2F;child&#x2F;‘</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">url:  https://Anastasia.github.io</span><br><span class="line">root: /AnastasiaJ/ </span><br></pre></td></tr></table></figure>
+<h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><p> <code>hexo s --debug</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Syntax Highlighting<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> <em>浏览器打开必须是 localhost:4000&#x2F;<code>你的root</code></em></p>
+<h3 id="发布到服务器：以上配置好后分别执行"><a href="#发布到服务器：以上配置好后分别执行" class="headerlink" title="发布到服务器：以上配置好后分别执行"></a>发布到服务器：以上配置好后分别执行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g 或者 hexo g -d</span><br></pre></td></tr></table></figure>
+<p><em>最好建一个分支，分支作为发布的博客内容，master作为构建代码，便于多台电脑发布博客</em></p>
+<h3 id="md文件配置"><a href="#md文件配置" class="headerlink" title=".md文件配置"></a>.md文件配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: hexo+nexT主题+githubPages个人博客搭建</span><br><span class="line"><span class="built_in">date</span>: 2018-08-29 09:41:56</span><br><span class="line">categories: <span class="string">&quot;博客搭建&quot;</span>  <span class="comment">#分类</span></span><br><span class="line">toc: <span class="literal">true</span> <span class="comment">#是否显示文章目录</span></span><br><span class="line">tags:</span><br><span class="line">    -nexT</span><br><span class="line">    -hexo</span><br><span class="line">    -githubPages</span><br></pre></td></tr></table></figure>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><ul>
+<li>新建文章 hexo new post title (post不定，可以是scaffolds中的任意一篇草稿)</li>
+<li></li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li><a href="http://ibruce.info/2015/04/04/busuanzi/">站点访问量“不蒜子”</a></li>
+<li><a href="https://blog.csdn.net/blue_zy/article/details/79071414">评论系统1：Valine</a></li>
+<li><a href="https://livere.com/insight/myCode">评论系统2：必来力LiveRe</a></li>
+<li><a href="https://aplayer.js.org/#/zh-Hans/" title="使用 Hexo 插件插入音乐/视频">音乐：hexo-tag-aplayer</a></li>
+</ul>
+<p>其他插件可参考NexT <a href="http://theme-next.iissnan.com/getting-started.html#install-next-theme">使用文档</a></p>
+<h2 id="走过的坑"><a href="#走过的坑" class="headerlink" title="走过的坑"></a>走过的坑</h2><h3 id="仓库的名字"><a href="#仓库的名字" class="headerlink" title="仓库的名字"></a>仓库的名字</h3><p>仓库的名字的正确格式是github用户名.github.io</p>
+<h3 id="hexo-s-启动命令不识别"><a href="#hexo-s-启动命令不识别" class="headerlink" title="hexo s 启动命令不识别"></a>hexo s 启动命令不识别</h3><p>需要安装 hexo-server</p>
+<hr>
+<p>以上内容写的比较简单，主要是记录了一个主要的搭建过程，具体详细的部分都有官方文档可参考，这里不另外阐述。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>nexT</tag>
+        <tag>githubPages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js生成UUID</title>
+    <url>/js%E7%94%9F%E6%88%90UUID/2018/09/14/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="什么是UUID"><a href="#什么是UUID" class="headerlink" title="什么是UUID"></a>什么是UUID</h1><blockquote>
+<p>UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写，是一种软件建构的标准，亦为开放软件基金会组织在分布式计算环境领域的一部分。其目的，是让分布式系统中的所有元素，都能有唯一的辨识信息，而不需要通过中央控制端来做辨识信息的指定。如此一来，每个人都可以创建不与其它人冲突的UUID。在这样的情况下，就不需考虑数据库创建时的名称重复问题。目前最广泛应用的UUID，是微软公司的全局唯一标识符（GUID），而其他重要的应用，则有Linux ext2&#x2F;ext3文件系统、LUKS加密分区、GNOME、KDE、Mac OS X等等。另外我们也可以在e2fsprogs包中的UUID库找到实现。</p>
+</blockquote>
+<h1 id="JS生成"><a href="#JS生成" class="headerlink" title="JS生成"></a>JS生成</h1><pre><code>// 生成uuid
+function generateUUID() &#123;
+    var d = new Date().getTime();
+    if (window.performance &amp;&amp; typeof window.performance.now === &quot;function&quot;) &#123;
+        d += performance.now(); //use high-precision timer if available
+    &#125;
+    var uuid = &#39;xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx&#39;.replace(/[xy]/g, function (c) &#123;
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == &#39;x&#39; ? r : (r &amp; 0x3 | 0x8)).toString(16);
+    &#125;);
+    return uuid;
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>UUID</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript中return、break、continue的区别</title>
+    <url>/return%E3%80%81break%E3%80%81continue%E7%9A%84%E5%8C%BA%E5%88%AB/2018/09/07/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>break是跳出一层循环，continue是结束一趟循环 ,return才是结束所有层循环!</strong></p>
+<p>如果有多层for循环,break会跳出当前这一层,去执行最外层循环(而不是退出所有层循环);而continue则结束当前次循环(继续)而去执行下次循环,但本层循环没有结束.(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环)</p>
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p> return 从当前的<strong>方法</strong>中退出,返回到该调用的方法的语句处,继续执行。 </p>
+<h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><ol>
+<li><strong>只能在循环体内和switch语句体内使用break语句。</strong></li>
+<li>当break出现在循环体中的switch语句体内时，其作用只是跳出该switch语句体。 </li>
+<li>当break出现在循环体中，但并不在switch语句体内时，则在执行break后，跳出本层循环体。 </li>
+<li>在循环结构中，应用break语句使流程跳出<strong>本层</strong>循环体，从而提前结束本层循环。</li>
+</ol>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p> 其作用是结束本次循环，即跳过本次循环体中余下尚未执行的语句，接着再一次进行循环的条件判定</p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>return</tag>
+        <tag>break</tag>
+        <tag>continue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>signalr实时推送--javascript客户端</title>
+    <url>/signalr%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81-javascript%E5%AE%A2%E6%88%B7%E7%AB%AF/2019/05/04/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><pre><code>&lt;script src=&quot;/static/js/jquery.signalR-2.2.2.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="连接服务端"><a href="#连接服务端" class="headerlink" title="连接服务端"></a>连接服务端</h2><pre><code>&lt;script src=&quot;http://192.168.1.77:9999/signalr/hubs&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="创建createHubProxy"><a href="#创建createHubProxy" class="headerlink" title="创建createHubProxy"></a>创建createHubProxy</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let let obj=&#123;commonHub:null&#125;;</span><br><span class="line">const connection= $.hubConnection(&#x27;http://192.168.1.77:9999&#x27;);</span><br><span class="line">obj.commonHub =  connectionTL.createHubProxy(&#x27;commonHub&#x27;);</span><br><span class="line"></span><br><span class="line">export function register(userId,callback)&#123;</span><br><span class="line">    connection.start().done(function (res) &#123;</span><br><span class="line">        obj.commonHub.invoke(&quot;register&quot;,userId, res.id).done(function () &#123;</span><br><span class="line">            console.log(&quot;registerTL&quot;,userId,res.id);</span><br><span class="line">            callback(res.id)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    connection.disconnected(function () &#123;</span><br><span class="line">        console.log(&quot;断开连接TL&quot;);  // 断开连接的处理方法</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export function connectionStop()&#123;</span><br><span class="line">    connection.stop();</span><br><span class="line">&#125;;</span><br><span class="line">export const commonHub = obj.commonHub; // 指向hub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="进入页面时启动监听并调用register方法，register在监听后调用。"><a href="#进入页面时启动监听并调用register方法，register在监听后调用。" class="headerlink" title="进入页面时启动监听并调用register方法，register在监听后调用。"></a>进入页面时启动监听并调用register方法，register在监听后调用。</h2><pre><code>commonHub.on(&#39;方法名&#39;,()=&gt;&#123;&#125;)
+</code></pre>
+<h2 id="离开页面时断开连接，调用connectionStop"><a href="#离开页面时断开连接，调用connectionStop" class="headerlink" title="离开页面时断开连接，调用connectionStop()"></a>离开页面时断开连接，调用connectionStop()</h2>]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>signalR</category>
+      </categories>
+      <tags>
+        <tag>signalR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>text</title>
+    <url>/text/2024/03/20/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>webpack demo</title>
+    <url>/webpack/2018/10/12/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>简单的webpack demo</p>
+<h1 id="配置文件-package-json"><a href="#配置文件-package-json" class="headerlink" title="配置文件 package.json"></a>配置文件 package.json</h1><pre><code>    &#123;
+        &quot;name&quot;: &quot;webpack-demo&quot;,
+        &quot;version&quot;: &quot;1.0.0&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;private&quot;: true,
+        &quot;scripts&quot;: &#123;
+            &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+            &quot;start&quot;: &quot;webpack-dev-server --open&quot;,
+            &quot;watch&quot;: &quot;webpack --watch&quot;,
+            &quot;server&quot;: &quot;node server.js&quot;,
+            &quot;build&quot;: &quot;webpack&quot;
+        &#125;,
+        &quot;keywords&quot;: [],
+        &quot;author&quot;: &quot;&quot;,
+        &quot;license&quot;: &quot;ISC&quot;,
+        &quot;devDependencies&quot;: &#123;
+            &quot;clean-webpack-plugin&quot;: &quot;^0.1.19&quot;,
+            &quot;css-loader&quot;: &quot;^1.0.0&quot;,
+            &quot;express&quot;: &quot;^4.16.4&quot;,
+            &quot;file-loader&quot;: &quot;^2.0.0&quot;,
+            &quot;html-webpack-plugin&quot;: &quot;^3.2.0&quot;,
+            &quot;style-loader&quot;: &quot;^0.23.1&quot;,
+            &quot;webpack&quot;: &quot;^4.20.2&quot;,
+            &quot;webpack-cli&quot;: &quot;^3.1.2&quot;,
+            &quot;webpack-dev-middleware&quot;: &quot;^3.4.0&quot;,
+            &quot;webpack-dev-server&quot;: &quot;^3.1.9&quot;,
+            &quot;xml-loader&quot;: &quot;^1.2.1&quot;
+        &#125;,
+        &quot;dependencies&quot;: &#123;
+            &quot;lodash&quot;: &quot;^4.17.11&quot;
+        &#125;
+    &#125;
+</code></pre>
+<p><strong>webpack 建议本地安装，这可以使我们在引入破坏式变更的依赖时，更容易分别升级项目。</strong></p>
+<p> <em>本地安装webpack后，能够从node_modules&#x2F;.bing&#x2F;webpack 访问它的bin版本</em></p>
+<p>从配置的依赖项来看，除了基本的webpack 及webpack-cli，还包括express、loader、plugin、middleware等，这些下面会进行说明。</p>
+<h1 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h1><pre><code>    const path = require(&#39;path&#39;);
+    const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;);
+    const CleanWebpackPlugin = require(&#39;clean-webpack-plugin&#39;);
+    const webpack = require(&#39;webpack&#39;);
+
+    module.exports = &#123;
+        entry: &#123;
+            app: &#39;./src/index.js&#39;
+        &#125;,
+        devtool: &#39;inline-source-map&#39;,
+        devServer: &#123;
+            contentBase: &#39;./dist&#39;,
+            hot: true
+            &#125;,
+        module: &#123;
+            rules: [
+            &#123;
+                test: /\.css$/,
+                use: [&#39;style-loader&#39;, &#39;css-loader&#39;]
+            &#125;
+            ]
+        &#125;,
+        plugins: [
+            new CleanWebpackPlugin([&#39;dist&#39;]),
+            new HtmlWebpackPlugin(&#123;
+            title: &#39;Output Management&#39;
+            &#125;),
+            new webpack.NamedModulesPlugin(),
+            new webpack.HotModuleReplacementPlugin()
+        ],
+        output: &#123;
+            filename: &#39;[name].bundle.js&#39;,
+            path: path.resolve(__dirname, &#39;dist&#39;),
+            publicPath: &#39;/&#39;
+        &#125;
+    &#125;;
+</code></pre>
+<h2 id="entry-项目入口"><a href="#entry-项目入口" class="headerlink" title="entry 项目入口"></a>entry 项目入口</h2><p>单个 entry&#x3D;’.&#x2F;src&#x2F;index.js’；</p>
+<p>多个 entry&#x3D;{<br>    app:’.&#x2F;src&#x2F;index.js’,<br>    main:’.&#x2F;src&#x2F;main.js’<br>}</p>
+<h2 id="output-项目出口"><a href="#output-项目出口" class="headerlink" title="output 项目出口"></a>output 项目出口</h2><pre><code>output: &#123;
+            filename: &#39;[name].bundle.js&#39;,
+            path: path.resolve(__dirname, &#39;dist&#39;),
+            publicPath: &#39;/&#39;
+        &#125;
+</code></pre>
+<p>filename顾名思义，输出的文件的名字，多个入口的情况下，’[name].bundle.js’ 会将文件输出为’app.bundle.js’及’main.bundle.js’，根据起点名称生成bundle文件。</p>
+<p>path 输出路径；</p>
+<p>publicPath：公共路径，会在服务器脚本用到，确保文件资源能够在 <a href="http://localhost:3000/">http://localhost:3000</a> 下正确访问</p>
+<h2 id="loader-管理资源"><a href="#loader-管理资源" class="headerlink" title="loader 管理资源"></a>loader 管理资源</h2><p>webpack 通过 loader 引入任何其他类型的文件。</p>
+<p>&#x2F;.css$&#x2F;: style-loader、css-loader；&#x2F;&#x2F;css</p>
+<p>&#x2F;.(png|svg|jpg|gif)$&#x2F;: file-loader；&#x2F;&#x2F;图片</p>
+<p>&#x2F;.(woff|woff2|eot|ttf|otf)$&#x2F;: file-loader；&#x2F;&#x2F;字体</p>
+<p>&#x2F;.(csv|tsv)$&#x2F;: csv-loader；&#x2F;&#x2F;csv</p>
+<p>&#x2F;.xml$&#x2F;: xml-loader；&#x2F;&#x2F;xml数据</p>
+<pre><code> import Data from &#39;./data.xml&#39;;
+ function component() &#123;
+    console.log(Data);
+    //import 这四种类型的数据(JSON, CSV, TSV, XML)中的任何一种，所导入的 Data 变量将包含可直接使用的已解析 JSON
+&#125;
+</code></pre>
+<h2 id="全局资源"><a href="#全局资源" class="headerlink" title="全局资源"></a>全局资源</h2><pre><code>    - |- /assets
+    + |– /components
+    + |  |– /my-component
+    + |  |  |– index.jsx
+    + |  |  |– index.css
+    + |  |  |– icon.svg
+    + |  |  |– img.png
+</code></pre>
+<p>类似这样，将模块和资源组合在一起，无需依赖于含有全部资源的 &#x2F;assets 目录，而是将资源与代码组合在一起，这样的结构会非常有用。</p>
+<p> <strong>会使代码更具有可移植性，因为现有的统一放置的方式会造成所有资源紧密耦合在一起。</strong></p>
+<p> 当无法用这种方式开发，或者有多个组件间资源共享的时候，仍然可以将这些资源存储在公共目录中，配合 <strong>alias</strong> 来使用他们更方便import导入。</p>
+<h3 id="alias写法："><a href="#alias写法：" class="headerlink" title="alias写法："></a>alias写法：</h3><pre><code>resolve:&#123;
+    alias: &#123;
+        ASSET: path.join(src, &#39;assets&#39;),
+        xyz$: path.resolve(__dirname, &#39;path/to/file.js&#39;)
+    &#125;,
+&#125;
+import Test1 from &#39;xyz&#39;; // 精确匹配，所以 path/to/file.js 被解析和导入
+import Test2 from &#39;xyz/file.js&#39;; // 非精确匹配，触发普通解析
+</code></pre>
+<p><strong>在给定对象的键后的末尾添加 $，以表示精准匹配</strong></p>
+<h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h2><h3 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h3><pre><code>npm install --save-dev html-webpack-plugin
+</code></pre>
+<p>该插件会根据我们的配置自动生成一个html入口文件，不用我们自己手动写。这样的好处就是，即使配置文件的入口点等名称改了，我们不用重新去修改index.html文件的内容。</p>
+<p>生成的bundle文件会自动添加到html中。</p>
+<h3 id="清理-dist文件夹"><a href="#清理-dist文件夹" class="headerlink" title="清理&#x2F;dist文件夹"></a>清理&#x2F;dist文件夹</h3><pre><code>npm install clean-webpack-plugin --save-dev
+</code></pre>
+<p>每次webpack生成文件前建议清除 &#x2F;dist 文件夹，避免过去生成的代码和最新的混合在一起。</p>
+<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><h2 id="使用-source-map-devtool"><a href="#使用-source-map-devtool" class="headerlink" title="使用 source map (devtool)"></a>使用 source map (devtool)</h2><p>用webpack打包，开发时需要追踪到具体错误和警告产生的位置，根据想要的效果不同需要做不同的配置。</p>
+<p>开发环境适合使用：eval-source-map<br>生产环境可省略</p>
+<p>具体说明还可查看 <a href="https://www.webpackjs.com/configuration/devtool/">官方配置</a></p>
+<h2 id="自动监测代码的变化"><a href="#自动监测代码的变化" class="headerlink" title="自动监测代码的变化"></a>自动监测代码的变化</h2><p>一下三种工具能在代码发生变化时自动编译代码：</p>
+<ol>
+<li>webpack’s Watch Mode</li>
+<li>webpack-dev-server</li>
+<li>webpack-dev-middleware</li>
+</ol>
+<h3 id="观察模式"><a href="#观察模式" class="headerlink" title="观察模式"></a>观察模式</h3><p>直接在配置文件package.json 中添加脚本 <code>&quot;watch&quot;: &quot;webpack --watch&quot;</code></p>
+<p><strong>缺点：需要手动刷新浏览器</strong></p>
+<h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><p><code>npm install --save-dev webpack-dev-server</code></p>
+<p>在webpack.config.js中配置，告诉开发服务器在哪里查找文件</p>
+<pre><code>    devServer: &#123;
+        contentBase: &#39;./dist&#39;
+    &#125;
+</code></pre>
+<p>同时添加一个 script 脚本，可以直接运行开发服务器(dev server)：</p>
+<p><code>&quot;start&quot;: &quot;webpack-dev-server --open&quot;</code></p>
+<h3 id="webpack-dev-middleware-配合-express-server"><a href="#webpack-dev-middleware-配合-express-server" class="headerlink" title="webpack-dev-middleware 配合 express server"></a>webpack-dev-middleware 配合 express server</h3><pre><code>`npm install --save-dev express webpack-dev-middleware`
+</code></pre>
+<p>webpack.config.js</p>
+<pre><code>output: &#123;
+    publicPath: &#39;/&#39;
+&#125;
+</code></pre>
+<p>server.js</p>
+<pre><code>const express = require(&#39;express&#39;);
+const webpack = require(&#39;webpack&#39;);
+const webpackDevMiddleware = require(&#39;webpack-dev-middleware&#39;);
+
+const app = express();
+const config = require(&#39;./webpack.config.js&#39;);
+const compiler = webpack(config);
+
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(webpackDevMiddleware(compiler, &#123;
+publicPath: config.output.publicPath
+&#125;));
+
+// Serve the files on port 3000.
+app.listen(3000, function () &#123;
+console.log(&#39;Example app listening on port 3000!\n&#39;);
+&#125;);
+</code></pre>
+<p>package.json</p>
+<pre><code>&quot;scripts&quot;: &#123;
+    &quot;server&quot;: &quot;node server.js&quot;,
+&#125;
+</code></pre>
+<h3 id="热替换"><a href="#热替换" class="headerlink" title="热替换"></a>热替换</h3><p>在项目已经运行的情况下，可以尝试模块热替换。</p>
+]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+        <tag>模块打包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文本溢出显示的几中写法</title>
+    <url>/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E7%9A%84%E5%87%A0%E4%B8%AD%E5%86%99%E6%B3%95/2018/12/27/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="单行文本溢出（整行）"><a href="#单行文本溢出（整行）" class="headerlink" title="单行文本溢出（整行）"></a>单行文本溢出（整行）</h1><p>效果：<br><img src="/uploads/%E5%8D%95%E8%A1%8C%E6%BA%A2%E5%87%BA.jpg" alt="单行文本溢出"></p>
+<p>html</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;test&quot;&gt;This is some long text that will not fit in the box&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div.test&#123;</span><br><span class="line">	white-space:nowrap;</span><br><span class="line">	width:12em;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">	border:1px solid #000000;</span><br><span class="line">    text-overflow:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="非整行文本溢出"><a href="#非整行文本溢出" class="headerlink" title="非整行文本溢出"></a>非整行文本溢出</h1><p>效果：<br><img src="/uploads/%E9%9D%9E%E6%95%B4%E8%A1%8C%E6%BA%A2%E5%87%BA.jpg" alt="单行文本溢出"></p>
+<p>html</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&#x27;table&#x27;&gt;</span><br><span class="line">	&lt;div class=&quot;test label&quot;&gt;姓名：&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;test value&quot;&gt;Anastasia&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&#x27;table&#x27;&gt;</span><br><span class="line">	&lt;div class=&quot;test label&quot;&gt;地址：&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;test value&quot;&gt;This is some long textThis is some long textThis is some long text&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div.table&#123;</span><br><span class="line">	display:table;</span><br><span class="line">	table-layout:fixed;</span><br><span class="line">	border:solid 1px red;</span><br><span class="line">	width:15em;</span><br><span class="line">	&#125;</span><br><span class="line">div.test</span><br><span class="line">&#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">&#125;</span><br><span class="line">div.label&#123;</span><br><span class="line">	width:4em</span><br><span class="line">&#125;</span><br><span class="line">div.value&#123;</span><br><span class="line">	white-space:nowrap;</span><br><span class="line">	text-overflow:ellipsis;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的几种设置和第一种是一样的，同样需要设置 white-space、width、overflow，但由于用到了 table 的布局方式，<strong>table td 的流动性，表格的宽度是跟随单元格内容多少自动计算尺寸</strong>，所以这里需要给 table 添加<strong>table-layout:fixed</strong>。</p>
+<h1 id="多行溢出（谷歌浏览器）"><a href="#多行溢出（谷歌浏览器）" class="headerlink" title="多行溢出（谷歌浏览器）"></a>多行溢出（谷歌浏览器）</h1><p>效果<br><img src="/uploads/%E5%A4%9A%E8%A1%8C%E6%BA%A2%E5%87%BA.jpg" alt="多行溢出"></p>
+<p>html</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;test&quot; style=&quot;-webkit-box-orient:vertical;&quot;&gt;This is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long textThis is some long text&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>css（<strong>注意 css 书写的顺序</strong>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  margin: auto;</span><br><span class="line">  width: 20em; //指定宽度</span><br><span class="line">  display: -webkit-box;</span><br><span class="line">	-webkit-box-orient: vertical;</span><br><span class="line">	-webkit-line-clamp: 3;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>多行溢出</tag>
+        <tag>单行溢出</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端基础知识点</title>
+    <url>/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/2019/04/02/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、关于HTML"><a href="#一、关于HTML" class="headerlink" title="一、关于HTML"></a>一、关于HTML</h1><h2 id="HTML语义化的理解"><a href="#HTML语义化的理解" class="headerlink" title="HTML语义化的理解"></a>HTML语义化的理解</h2><pre><code>1. 主要围绕 h1~6、strong、li等标签
+2. 结构化（内容上语义化），即使没有css样式也能很好地展示页面结构；代码语义化，便于开发者阅读同时能让浏览器爬虫和机器很好地阅读，有利于SEO。
+</code></pre>
+<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>拖拽组件：react-dnd</title>
+    <url>/%E6%8B%96%E6%8B%BD%E7%BB%84%E4%BB%B6%EF%BC%9Areact-dnd/2018/12/19/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>从昨天下午在弄一个关于拖拽的问题，实在有点心烦，先暂停下来，认真梳理一下关于这个组件的知识。</p>
+</blockquote>
+<hr>
+<p>全文参考了silkshdow的文章， <a href="https://phoebecodespace.github.io/2018/05/03/react-dnd-guide/">原文地址</a></p>
+<h1 id="核心API"><a href="#核心API" class="headerlink" title="核心API"></a>核心API</h1><ul>
+<li>DragSource 用于包装你需要拖动的组件，使组件能够被拖拽（make it draggable）</li>
+<li>DropTarget 用于包装接收拖拽元素的组件，使组件能够放置（dropped on it）</li>
+<li>DragDropContex 用于包装拖拽根组件，DragSource 和 DropTarget 都需要包裹在DragDropContex内</li>
+<li>DragDropContextProvider 与 DragDropContex 类似，用 DragDropContextProvider 元素包裹拖拽根组件。</li>
+</ul>
+<h1 id="API参数介绍"><a href="#API参数介绍" class="headerlink" title="API参数介绍"></a>API参数介绍</h1><h2 id="DragSource-type-spec-collect"><a href="#DragSource-type-spec-collect" class="headerlink" title="DragSource(type, spec, collect)"></a>DragSource(type, spec, collect)</h2><h2 id="DropTarget-type-spec-collect"><a href="#DropTarget-type-spec-collect" class="headerlink" title="DropTarget(type, spec, collect)"></a>DropTarget(type, spec, collect)</h2><ol>
+<li>type: 拖拽类型，必填</li>
+<li>spec: 拖拽事件的方法对象，必填。</li>
+<li>collect: 把拖拽过程中需要信息注入组件的 props，接收两个参数 connect and monitor，必填。</li>
+</ol>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p> 当 source组件的type 和 target组件的type 一致时，target组件可以接受source组件。</p>
+<p>type的类型可以是 string，symbol，也可以是用一个函数来返回该组件的其他 props</p>
+<h3 id="spec"><a href="#spec" class="headerlink" title="spec"></a>spec</h3><p>spec定义特定方法的对象，如 source组件的spec 可以定义 <code>拖动</code> 相关的事件，target组件的spec 可以定义 <code>放置</code> 相关的事件，具体列表：</p>
+<h4 id="1-DragSource-specObj"><a href="#1-DragSource-specObj" class="headerlink" title="1. DragSource specObj"></a>1. DragSource specObj</h4><ul>
+<li>beginDrag(props, monitor, component): 拖动开始时触发的事件，必须。返回跟props相关的对象。</li>
+<li>endDrag(props, monitor, component): 拖动结束时触发的事件，可选。</li>
+<li>canDrag(props, monitor): 当前是否可以拖拽的事件，可选。</li>
+<li>isDragging(props, monitor): 拖拽时触发的事件，可选。<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Box.jsx</span><br><span class="line">const sourceSpec = &#123;</span><br><span class="line">    beginDrag(props, monitor, component)&#123;</span><br><span class="line">    // 返回需要注入的属性</span><br><span class="line">    return &#123;</span><br><span class="line">        id: props.id</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    endDrag(props, monitor, component)&#123;</span><br><span class="line">    // ..</span><br><span class="line">    &#125;,</span><br><span class="line">    canDrag(props, monitor)&#123;</span><br><span class="line">    // ..</span><br><span class="line">    &#125;,</span><br><span class="line">    isDragging(props, monitor)&#123;</span><br><span class="line">    // ..</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@DragSource(ItemTypes.BOX, sourceSpec, collect)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-DropTarget-specObj"><a href="#2-DropTarget-specObj" class="headerlink" title="2. DropTarget specObj"></a>2. DropTarget specObj</h4><ul>
+<li><p>drop(props, monitor, component) 组件放下时触发的事件，可选。</p>
+</li>
+<li><p>hover(props, monitor, component) 组件在DropTarget上方时响应的事件，可选。</p>
+</li>
+<li><p>canDrop(props, monitor) 组件可以被放置时触发的事件，可选。</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Dustbin.jsx</span><br><span class="line">const targetSpec = &#123;</span><br><span class="line">drop(props, monitor, component)&#123;</span><br><span class="line">    // ..</span><br><span class="line">&#125;,</span><br><span class="line">hover(props, monitor, component)&#123;</span><br><span class="line">    // ..</span><br><span class="line">&#125;,</span><br><span class="line">canDrop(props, monitor)&#123;</span><br><span class="line">    // ..</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">@DropTarget(ItemTypes.BOX, targetSpec, collect)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="3-specObj-对象方法相关参数"><a href="#3-specObj-对象方法相关参数" class="headerlink" title="3.  specObj 对象方法相关参数"></a>3.  specObj 对象方法相关参数</h4><ul>
+<li>props： 组件当前的props</li>
+<li>monitor：查询当前的拖拽状态，比如当前拖拽的item和它的type，当前拖拽的offsets，当前是否dropped。具体获取方法，参看collect 参数 monitor 部分<ul>
+<li>source组件 的 monitor 参数是 DragSourceMonitor 的实例</li>
+<li>target组件 的 monitor 参数是 DropTargetMonitor 的实例</li>
+</ul>
+</li>
+<li>component：当前组件实例</li>
+</ul>
+<h4 id="4-collect"><a href="#4-collect" class="headerlink" title="4. collect"></a>4. collect</h4><p>collect 是一个函数，默认有两个参数：connect 和 monitor。collect函数将<code>返回一个对象</code>，这个对象会注入到组件的 <code>props</code> 中，也就是说，我们可以通过 this.props 获取collect返回的所有属性。<br> <em>传递参数时需要，项目中很多地方会需要知道当前拖拽的相关数据，很有用</em></p>
+<h4 id="5-参数-connect"><a href="#5-参数-connect" class="headerlink" title="5. 参数 connect"></a>5. 参数 connect</h4><ul>
+<li>source组件 collect 中 connect是 DragSourceConnector的实例，它内置了两个方法：<code>dragSource()</code> 和 <code>dragPreview()</code>。dragSource()返回一个方法，将source组件传入这个方法，可以将 source DOM 和 React DnD backend 连接起来；dragPreview() 返回一个方法，你可以传入节点，作为拖拽预览时的角色。</li>
+<li>target组件 collect 中 connect是 DropTargetConnector的实例，内置的方法<code> dropTarget()</code> 对应 dragSource()，返回可以将 drop target 和 React DnD backend 连接起来的方法。</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Box.jsx</span><br><span class="line">  @DragSource(ItemTypes.BOX, sourceSpec,(connect)=&gt;(&#123;</span><br><span class="line">  connectDragSource: connect.dragSource(),</span><br><span class="line">  connectDragPreview: connect.dragPreview(),</span><br><span class="line">  &#125;))</span><br><span class="line">  export default class Box &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">      const &#123; connectDragSource &#125; = this.props</span><br><span class="line">      return connectDragSource(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      &#123;</span><br><span class="line">          /* ... */</span><br><span class="line">          &#125;</span><br><span class="line">      &lt;/div&gt;,</span><br><span class="line">      )</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Dustbin.jsx</span><br><span class="line">  @DropTarget(ItemTypes.BOX, targetSpec, (connect)=&gt;&#123;</span><br><span class="line">  connectDropTarget: connect.dropTarget(),</span><br><span class="line">  &#125;)</span><br><span class="line">  export default class Dustbin &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">      const &#123; connectDropTarget &#125; = this.props</span><br><span class="line">      return connectDropTarget(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      &#123;</span><br><span class="line">          /* ... */</span><br><span class="line">          &#125;</span><br><span class="line">      &lt;/div&gt;,</span><br><span class="line">      )</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="6-参数-monitor"><a href="#6-参数-monitor" class="headerlink" title="6. 参数 monitor"></a>6. 参数 monitor</h4><p>monitor 用于查询当前的拖拽状态，其对应实例内置了很多方法。<br>内置方法列表：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> // DragSourceMonitor</span><br><span class="line">monitor.canDrag()        // 是否能被拖拽</span><br><span class="line">monitor.isDragging()      // 是否正在拖拽</span><br><span class="line">monitor.getItemType()     // 拖拽组件type</span><br><span class="line">monitor.getItem()         // 当前拖拽的item</span><br><span class="line">monitor.getDropResult()   // 查询drop结果</span><br><span class="line">monitor.didDrop()         // source是否已经drop在target</span><br><span class="line">monitor.getInitialClientOffset()   // 拖拽组件初始拖拽时offset</span><br><span class="line">monitor.getInitialSourceClientOffset()</span><br><span class="line">monitor.getClientOffset() // 拖拽组件当前offset</span><br><span class="line">monitor.getDifferenceFromInitialOffset() // 当前拖拽offset和初始拖拽offset的差别</span><br><span class="line">monitor.getSourceClientOffset()</span><br><span class="line"></span><br><span class="line">// DropTargetMonitor</span><br><span class="line">monitor.canDrop()         // 是否可被放置</span><br><span class="line">monitor.isOver(options)   // source是否在target上方</span><br><span class="line">monitor.getItemType()     // 拖拽组件type</span><br><span class="line">monitor.getItem()         // 当前拖拽的item</span><br><span class="line">monitor.getDropResult()   // 查询drop结果</span><br><span class="line">monitor.didDrop()         // source是否已经drop在target</span><br><span class="line">monitor.getInitialClientOffset()   // 拖拽组件初始拖拽时offset</span><br><span class="line">monitor.getInitialSourceClientOffset()</span><br><span class="line">monitor.getClientOffset() // 拖拽组件当前offset</span><br><span class="line">monitor.getDifferenceFromInitialOffset() // 当前拖拽offset和初始拖拽offset的差别</span><br><span class="line">monitor.getSourceClientOffset()</span><br></pre></td></tr></table></figure>
+
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>以上是一个网友的总结，我实际上是需要在antd的table组件中使用的，react-dnd与antd-table组合又有些不同，将在下一篇文章中记录。</p>
+<h2 id="拖拽时候的样式重写"><a href="#拖拽时候的样式重写" class="headerlink" title="拖拽时候的样式重写"></a>拖拽时候的样式重写</h2><p> <a href="https://www.npmjs.com/package/react-dnd-text-dragpreview">react-dnd-text-dragpreview</a></p>
+<h2 id="官网例子"><a href="#官网例子" class="headerlink" title="官网例子"></a><a href="http://react-dnd.github.io/react-dnd/examples-chessboard-tutorial-app.html">官网例子</a></h2><h2 id="官方源码"><a href="#官方源码" class="headerlink" title="官方源码"></a><a href="https://github.com/react-dnd/react-dnd">官方源码</a></h2>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>react-dnd</tag>
+        <tag>拖拽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器缓存</title>
+    <url>/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/2020/05/28/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>缓存可以说是性能优化中简单高效的一种优化方式了。一个优秀的缓存策略可以缩短网页请求资源的距离，减少延迟，并且由于缓存文件可以重复利用，还可以减少带宽，降低网络负荷。</p>
+<p>一个数据请求，可以分为发起网络请求、后端处理、浏览器响应三个步骤。在第一和第三步可做优化。</p>
+<p><img src="/uploads/cache.png" alt="img"></p>
+<h2 id="缓存位置"><a href="#缓存位置" class="headerlink" title="缓存位置"></a>缓存位置</h2><ul>
+<li>Servic Worker</li>
+<li>Memory Cache</li>
+<li>Disk Cache</li>
+<li>Push Cache</li>
+</ul>
+<ol>
+<li><p>Servic Worker 是运行在浏览器背后的独立线程，可以理解为是介于客户端和服务端间的代理服务器。可以拦截客户端的请求、向客户端发送请求、向服务端发起请求，其中最重要的作用之一是离线资源缓存。<br> 它与web worker的相同点在于：</p>
+<ul>
+<li>工作在worker context中，无法访问dom节点</li>
+<li>可以通过<strong>post message</strong>接口把数据传给其他JS文件</li>
+<li>运行的代码<strong>不会被阻塞</strong>，也不会阻塞其他JS文件中的代码<br> 不同点在于，service worker是浏览器的一个<strong>进程</strong>而不是浏览器内核下的<strong>线程</strong>，因此它被注册安装之后可以在多个页面之间使用，不会因为页面的关闭而销毁。<br>另外有一点需要注意的是，出于对安全问题的考虑，Service Worker 只能被使用在 <strong>https</strong> 或者本地的 <strong>localhost</strong> 环境下。</li>
+</ul>
+</li>
+<li><p>Memory Cache 内存中的缓存，主要包含的是当前页面中已经抓取到的资源，例如页面上已经下载的样式、脚本、图片等。读取内存中的速度比硬盘中的快，但是存储持续性短。<strong>一旦关闭了tab页面，缓存的内容也就被释放了</strong>。<br> 内存容量比硬盘容量小得多。<br> 当我们访问过页面以后，再次刷新页面，可以发现很多数据都来自于内存缓存。<br> 内存缓存中有一块重要的缓存资源是preloader相关指令（例如<link rel="prefetch">）下载的资源。总所周知preloader的相关指令已经是页面优化的常见手段之一，它可以一边解析js&#x2F;css文件，一边网络请求下一个资源。<br> 需要注意的事情是，<strong>内存缓存在缓存资源时并不关心返回资源的HTTP缓存头Cache-Control是什么值，同时资源的匹配也并非仅仅是对URL做匹配，还可能会对Content-Type，CORS等其他特征做校验。</strong></p>
+</li>
+<li><p>Disk Cache 也就是存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。它会根据 HTTP Herder 中的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据。</p>
+</li>
+<li><p>Push Cache（推送缓存）是 HTTP&#x2F;2 中的内容，当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在Chrome浏览器中只有5分钟左右，同时它也并非严格执行HTTP头中的缓存指令。</p>
+</li>
+</ol>
+<h2 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h2><p>浏览器缓存分为强缓存和协商缓存，强缓存会直接从浏览器里面拿数据，协商缓存会先访问服务器看缓存是否过期，再决定是否从浏览器里面拿数据。<br>缓存策略都是通过设置 HTTP Header 来实现的。</p>
+<h3 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h3><p>控制强缓存的字段有：Expires 和 Cache-Control。</p>
+<h4 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h4><p>不会向服务器发送请求，直接从缓存中读取资源。</p>
+<p>缓存过期时间，用来指定资源到期的时间，是服务器端的具体的时间点。也就是说，Expires&#x3D;max-age + 请求时间，需要和Last-modified结合使用。</p>
+<p>Expires 是 HTTP&#x2F;1 的产物，受限于本地时间，如果修改了本地时间，可能会造成缓存失效。Expires: Wed, 22 Oct 2018 08:41:00 GMT表示资源会在 Wed, 22 Oct 2018 08:41:00 GMT 后过期，需要再次请求</p>
+<h4 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h4><p>在HTTP&#x2F;1.1中，Cache-Control是最重要的规则，主要用于<strong>控制网页缓存</strong>。比如当Cache-Control:max-age&#x3D;300时，则代表在这个请求正确返回时间（浏览器也会记录下来）的5分钟内再次加载资源，就会命中强缓存。</p>
+<h4 id="Expires和Cache-Control两者对比"><a href="#Expires和Cache-Control两者对比" class="headerlink" title="Expires和Cache-Control两者对比"></a>Expires和Cache-Control两者对比</h4><p>其实这两者差别不大，区别就在于 Expires 是http1.0的产物，Cache-Control是http1.1的产物，两者同时存在的话，Cache-Control优先级高于Expires；在某些不支持HTTP1.1的环境下，Expires就会发挥用处。所以<strong>Expires其实是过时的产物，现阶段它的存在只是一种兼容性的写法。</strong><br>强缓存判断是否缓存的依据来自于是否超出某个时间或者某个时间段，而不关心服务器端文件是否已经更新，这可能会导致加载文件不是服务器端最新的内容，那我们如何获知服务器端内容是否已经发生了更新呢？此时我们需要用到协商缓存策略。</p>
+<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>控制协商缓存的字段是：Last-Modified &#x2F; If-Modified-Since 和 Etag &#x2F; If-None-Match，其中 Etag &#x2F; If-None-Match 的优先级比 Last-Modified &#x2F; If-Modified-Since 高。<br>协商缓存就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程，主要有以下两种情况：</p>
+<ol>
+<li>协商缓存生效，返回304和Not Modified</li>
+<li>协商缓存失效，返回200和请求结果</li>
+</ol>
+<h4 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified &#x2F; If-Modified-Since"></a>Last-Modified &#x2F; If-Modified-Since</h4><p>服务端返回Last-Modified（最后修改时间），客户端再次请求时将该值放在在header的If-Modified-Since中，服务端比较最新修改时间和If-Modified-Since的值。</p>
+<h5 id="弊端："><a href="#弊端：" class="headerlink" title="弊端："></a>弊端：</h5><ul>
+<li>如果本地打开缓存文件，即使没有对文件进行修改，但还是会造成 Last-Modified 被修改，服务端不能命中缓存导致发送相同的资源</li>
+<li>因为 Last-Modified 只能以秒计时，如果在不可感知的时间内修改完成文件，那么服务端会认为资源还是命中了，不会返回正确的资源</li>
+</ul>
+<h4 id="Etag-If-None-Match"><a href="#Etag-If-None-Match" class="headerlink" title="Etag &#x2F; If-None-Match"></a>Etag &#x2F; If-None-Match</h4><p>Etag是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)，只要资源有变化，Etag就会重新生成。</p>
+<h4 id="两者比较"><a href="#两者比较" class="headerlink" title="两者比较"></a>两者比较</h4><ol>
+<li>在精度上，Etag精度高于Last-Modified。Last-Modified的时间单位时秒，前者却是每次修改都会变化。</li>
+<li>在性能上，Etag要逊于Last-Modified，毕竟Last-Modified只需要记录时间，而Etag需要服务器通过算法来计算出一个hash值。</li>
+<li>在优先级上，服务器校验优先考虑Etag。</li>
+</ol>
+<h2 id="用户行为的影响"><a href="#用户行为的影响" class="headerlink" title="用户行为的影响"></a>用户行为的影响</h2><p>所谓用户行为对浏览器缓存的影响，指的就是用户在浏览器如何操作时，会触发怎样的缓存策略。主要有 3 种：</p>
+<ol>
+<li>打开网页，地址栏输入地址： 查找 disk cache 中是否有匹配。如有则使用；如没有则发送网络请求。</li>
+<li>普通刷新 (F5)：因为 TAB 并没有关闭，因此 memory cache 是可用的，会被优先使用(如果匹配的话)。其次才是 disk cache。</li>
+<li>强制刷新 (Ctrl + F5)：浏览器不使用缓存，因此发送的请求头部均带有 Cache-control: no-cache(为了兼容，还带了 Pragma: no-cache),服务器直接返回 200 和最新内容。</li>
+</ol>
+<h2 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h2><ol>
+<li>频繁变动的资源<blockquote>
+<p>Cache-Control: no-cache</p>
+</blockquote>
+</li>
+</ol>
+<p> 对于频繁变动的资源，首先需要使用Cache-Control: no-cache 使浏览器每次都请求服务器，然后配合 ETag 或者 Last-Modified 来验证资源是否有效。这样的做法虽然不能节省请求数量，但是能显著减少响应数据大小。</p>
+<ol start="2">
+<li>不常变化的资源</li>
+</ol>
+<blockquote>
+<p>Cache-Control: max-age&#x3D;31536000</p>
+</blockquote>
+<p>通常在处理这类资源时，给它们的 Cache-Control 配置一个很大的 max-age&#x3D;31536000 (一年)，这样浏览器之后请求相同的 URL 会命中强制缓存。而为了解决更新的问题，就需要在文件名(或者路径)中添加 hash， 版本号等动态字符，之后更改动态字符，从而达到更改引用 URL 的目的，让之前的强制缓存失效 (其实并未立即失效，只是不再使用了而已)。<br>在线提供的类库 (如 jquery-3.3.1.min.js, lodash.min.js 等) 均采用这个模式。</p>
+]]></content>
+      <categories>
+        <category>浏览器</category>
+        <category>缓存</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>谷歌浏览器实现直接打印效果</title>
+    <url>/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%9E%E7%8E%B0%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0%E6%95%88%E6%9E%9C/2019/02/28/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
+<li>创建快捷方式;</li>
+<li>右击-&gt;属性-&gt;目标 的尾部添加  –kiosk-printing 注意前面有空格<br><img src="/uploads/add--kiosk-printing.png" alt="img"></li>
+<li>调用 <code>window.print()</code> 就可以实现直接打印了</li>
+</ol>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>直接打印</tag>
+        <tag>谷歌</tag>
+        <tag>--kiosk-printing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试整理——一</title>
+    <url>/%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86%E2%80%94%E2%80%94%E4%B8%80/2018/11/22/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="左右布局（左定宽，右边自适应宽度）"><a href="#左右布局（左定宽，右边自适应宽度）" class="headerlink" title="左右布局（左定宽，右边自适应宽度）"></a>左右布局（左定宽，右边自适应宽度）</h1><p> 写法一(利用calc)：<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //html</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">//css</span><br><span class="line">    .container&#123;</span><br><span class="line">            width:100%;</span><br><span class="line">            height:100%;</span><br><span class="line">            font-size:0;</span><br><span class="line">        &#125;</span><br><span class="line">    .left&#123;</span><br><span class="line">        background: orange;</span><br><span class="line">        width:220px;</span><br><span class="line">        height: 100%;</span><br><span class="line">        display: inline-block;</span><br><span class="line">    &#125;</span><br><span class="line">    .content&#123;</span><br><span class="line">        background: lightblue;</span><br><span class="line">        height: 100%;</span><br><span class="line">        width: calc(100% - 220px);</span><br><span class="line">        display: inline-block;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><br> 利用css3 函数——calc， <strong>注意：calc中的运算符前后要留白，否则不起作用</strong>  。<br>这里同样可以使用 float:left。</p>
+<p> 注意这里使用的 inline-block</p>
+<blockquote>
+<p>使用inline-block会存在间隙问题，因为我们写标签时通常会在标签结束符后顺手打个回车，而回车会产生回车符，回车符相当于空白符，通常情况下，多个连续的空白符会合并成一个空白符，而产生“空白间隙”的真正原因就是这个。</p>
+<ol>
+<li>取消换行可以解决间隙的问题（不推荐）；</li>
+<li>设置 font-size:0;那么空白符也会变成0px；</li>
+</ol>
+</blockquote>
+<p>  写法二（浮动）：<br>   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> //html</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">//css</span><br><span class="line">    .container&#123;</span><br><span class="line">        width:100%;</span><br><span class="line">        height:100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .left&#123;</span><br><span class="line">        background: orange;</span><br><span class="line">        width:220px;</span><br><span class="line">        height:100%;</span><br><span class="line">        float: left;</span><br><span class="line">    &#125;</span><br><span class="line">    .content&#123;</span><br><span class="line">        background: lightblue;</span><br><span class="line">        margin-left: 220px;</span><br><span class="line">        height:100%;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>  写法三（浮动和负边距）：<br>   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> //html</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;content-inner&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">//css</span><br><span class="line">    .container&#123;</span><br><span class="line">        width:100%;</span><br><span class="line">        height:100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .left&#123;</span><br><span class="line">        background: orange;</span><br><span class="line">        width:220px;</span><br><span class="line">        height:100%;</span><br><span class="line">        float: left;</span><br><span class="line">        margin-right: -100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .content&#123;</span><br><span class="line">        width: 100%;</span><br><span class="line">        float: left;</span><br><span class="line">        height: 100%;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .content-inner&#123;</span><br><span class="line">        background: lightblue;</span><br><span class="line">        margin-left: 220px;</span><br><span class="line">        height:100%;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure></p>
+<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><p>从外到内依次：margin&gt;border&gt;padding&gt;content.</p>
+<p>box-sizing:<br>content-box（默认）:width&#x3D;padding+content;<br>border-box:width&#x3D;border+padding+content;</p>
+<blockquote>
+<p>box-sizing: content-box 是W3C盒子模型;</p>
+</blockquote>
+<blockquote>
+<p>box-sizing: border-box 是IE盒子模型</p>
+</blockquote>
+<h1 id="css画三角形"><a href="#css画三角形" class="headerlink" title="css画三角形"></a>css画三角形</h1><pre><code>        width:0;
+        height:0;
+        border:solid 20px transparent;
+        border-top-color: #000;
+</code></pre>
+<p><strong>只要保证内容是空的，三角形的高就是边宽，只显示一边的颜色。</strong></p>
+<h1 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h1><p> <img src="/uploads/%E4%BA%8B%E4%BB%B6%E6%B5%81.jpg" alt="事件流"><br> “DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。</p>
+<p>“DOM2级事件”定义了两个方法，用于处理指定和删除事件处理程序的操作：<strong>addEventListener()和 removeEventListener()<strong>。所有 DOM 节点中都包含这两个方法，并且它们都接受 3 个参数：要处<br>理的事件名、作为事件处理程序的函数和</strong>一个布尔值</strong>。最后这个布尔值参数如果是 true，表示在捕获阶段调用事件处理程序；如果是 false，表示在冒泡阶段调用事件处理程序（<strong>默认是冒泡</strong>）。</p>
+<blockquote>
+<p>IE对应的方法attachEvent()和 detachEvent()。，attachEvent()的第一个参数是”onclick”，而非 DOM 的 addEventListener()方法中的”click”。</p>
+</blockquote>
+<h2 id="阻止冒泡的方法"><a href="#阻止冒泡的方法" class="headerlink" title="阻止冒泡的方法"></a>阻止冒泡的方法</h2> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;divOne&quot; onclick=&quot;alert(&#x27;我是最外层&#x27;);&quot;&gt;</span><br><span class="line">　　　　　　&lt;div id=&quot;divTwo&quot; onclick=&quot;alert(&#x27;我是中间层！&#x27;)&quot;&gt;</span><br><span class="line">　　　　　　　　&lt;a id=&quot;hr_three&quot; href=&quot;http://www.baidu.com&quot; onclick=&quot;alert(&#x27;我是最里层！&#x27;)&quot;&gt;点击我&lt;/a&gt;</span><br><span class="line">　　　　　　&lt;/div&gt;</span><br><span class="line">　　　　&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol>
+<li>event.stopPropagation();</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">      $(function() &#123;</span><br><span class="line">          $(&quot;#hr_three&quot;).click(function(event) &#123;</span><br><span class="line">              event.stopPropagation();</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &lt;script&gt;</span><br></pre></td></tr></table></figure>
+<p>再点击“点击我”，会弹出：我是最里层，然后链接到百度</p>
+<ol start="2">
+<li>return false;</li>
+</ol>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> 如果头部加入的是以下代码</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(function() &#123;</span><br><span class="line">　　$(&quot;#hr_three&quot;).click(function(event) &#123;</span><br><span class="line">　　　　return false;</span><br><span class="line">　　&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;script&gt; </span><br><span class="line"></span><br><span class="line">再点击“点击我”，会弹出：我是最里层，但不会执行链接到百度页面</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>event.preventDefault();<br> 事件处理过程中，不阻击事件冒泡，但阻击默认行为（它只执行所有弹框，却没有执行超链接跳转）</li>
+</ol>
+<h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1><blockquote>
+<p>对“事件处理程序过多”问题的解决方案就是事件委托。事件委托利用了<strong>事件冒泡</strong>，只指定一个事<br>件处理程序，就可以管理某一类型的所有事件。</p>
+</blockquote>
+<h2 id="使用事件委托，只需在DOM-树中尽量最高的层次上添加一个事件处理程序，如下面的例子所示。"><a href="#使用事件委托，只需在DOM-树中尽量最高的层次上添加一个事件处理程序，如下面的例子所示。" class="headerlink" title="使用事件委托，只需在DOM 树中尽量最高的层次上添加一个事件处理程序，如下面的例子所示。"></a>使用事件委托，只需在DOM 树中尽量最高的层次上添加一个事件处理程序，如下面的例子所示。<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var list = document.getElementById(&quot;myLinks&quot;);</span><br><span class="line">EventUtil.addHandler(list, &quot;click&quot;, function(event)&#123;</span><br><span class="line">event = EventUtil.getEvent(event);</span><br><span class="line">var target = EventUtil.getTarget(event);</span><br><span class="line">switch(target.id)&#123;</span><br><span class="line">case &quot;doSomething&quot;:</span><br><span class="line">    document.title = &quot;I changed the document&#x27;s title&quot;;</span><br><span class="line">    break;</span><br><span class="line">case &quot;goSomewhere&quot;:</span><br><span class="line">    location.href = &quot;http://www.wrox.com&quot;;</span><br><span class="line">    break;</span><br><span class="line">case &quot;sayHi&quot;:</span><br><span class="line">    alert(&quot;hi&quot;);</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure></h2><p>那什么样的事件可以用事件委托，什么样的事件不可以用呢？</p>
+<p>适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。</p>
+<p>值得注意的是，mouseover和mouseout虽然也有事件冒泡，但是处理它们的时候需要特别的注意，因为需要经常计算它们的位置，处理起来不太容易。</p>
+<p>不适合的就有很多了，举个例子，mousemove，每次都要计算它的位置，非常不好把控，在不如说focus，blur之类的，本身就没用冒泡的特性，自然就不能用事件委托了。</p>
+<p> <em>开始被问到这个词的时候，脑子里的第一反应居然是事件绑定。。。画个小圈圈让自己牢牢记住！</em></p>
+<h1 id="call-apply-bind"><a href="#call-apply-bind" class="headerlink" title="call,apply,bind"></a>call,apply,bind</h1><p> 改变函数运行时this的指向。<br> 具体区别和应用参考文章<br>  <a href="https://www.cnblogs.com/Jade-Liu18831/p/9580410.html">call，apply，bind的用法与区别</a></p>
+<h1 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a>use strict</h1><h2 id="为什么用严格模式"><a href="#为什么用严格模式" class="headerlink" title="为什么用严格模式"></a>为什么用严格模式</h2><ol>
+<li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
+<li>提高编译器效率，增加运行速度；</li>
+<li>为未来新版本的Javascript做好铺垫。</li>
+</ol>
+<h2 id="如何调用"><a href="#如何调用" class="headerlink" title="如何调用"></a>如何调用</h2><h3 id="针对单个脚本"><a href="#针对单个脚本" class="headerlink" title="针对单个脚本"></a>针对单个脚本</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">　　　　&quot;use strict&quot;;</span><br><span class="line">　　　　console.log(&quot;这是严格模式。&quot;);</span><br><span class="line">　　&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="针对单个函数"><a href="#针对单个函数" class="headerlink" title="针对单个函数"></a>针对单个函数</h3> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">　　　　&quot;use strict&quot;;</span><br><span class="line">　　　　console.log(&quot;这是严格模式。&quot;);</span><br><span class="line">　　&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="严格模式下与普通模式下有什么区别"><a href="#严格模式下与普通模式下有什么区别" class="headerlink" title="严格模式下与普通模式下有什么区别"></a>严格模式下与普通模式下有什么区别</h2><h3 id="全局变量显式声明"><a href="#全局变量显式声明" class="headerlink" title="全局变量显式声明"></a>全局变量显式声明</h3><p>  在正常模式中，如果一个变量没有声明就赋值，默认是全局变量。严格模式禁止这种用法，全局变量必须显式声明。</p>
+<h3 id="禁止this关键字指向全局对象"><a href="#禁止this关键字指向全局对象" class="headerlink" title="禁止this关键字指向全局对象"></a>禁止this关键字指向全局对象</h3>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function f()&#123;</span><br><span class="line">　　　　return !this;</span><br><span class="line">　　&#125; </span><br><span class="line">　　// 返回false，因为&quot;this&quot;指向全局对象，&quot;!this&quot;就是false</span><br><span class="line">　　function f()&#123; </span><br><span class="line">　　　　&quot;use strict&quot;;</span><br><span class="line">　　　　return !this;</span><br><span class="line">　　&#125; </span><br><span class="line">　　// 返回true，因为严格模式下，this的值为undefined，所以&quot;!this&quot;为true。</span><br></pre></td></tr></table></figure>
+<p>因此，使用构造函数时，如果忘了加new，this不再指向全局对象，而是报错。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function f()&#123;</span><br><span class="line">　　　　&quot;use strict&quot;;</span><br><span class="line">　　　　this.a = 1;</span><br><span class="line">　　&#125;;</span><br><span class="line">　　f();// 报错，this未定义</span><br></pre></td></tr></table></figure>
+<h3 id="禁止删除变量"><a href="#禁止删除变量" class="headerlink" title="禁止删除变量"></a>禁止删除变量</h3><p>严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line">　　var x;</span><br><span class="line">　　delete x; // 语法错误</span><br><span class="line">　　var o = Object.create(null, &#123;&#x27;x&#x27;: &#123;</span><br><span class="line">　　　　　　value: 1,</span><br><span class="line">　　　　　　configurable: true</span><br><span class="line">　　&#125;&#125;);</span><br><span class="line">　　delete o.x; // 删除成功</span><br></pre></td></tr></table></figure>
+<h3 id="对象不能有重名的属性"><a href="#对象不能有重名的属性" class="headerlink" title="对象不能有重名的属性"></a>对象不能有重名的属性</h3><p>正常模式下，如果对象有多个重名属性，最后赋值的那个属性会覆盖前面的值。严格模式下，这属于语法错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line">　　var o = &#123;</span><br><span class="line">　　　　p: 1,</span><br><span class="line">　　　　p: 2</span><br><span class="line">　　&#125;; // 语法错误</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="函数不能有重名的参数"><a href="#函数不能有重名的参数" class="headerlink" title="函数不能有重名的参数"></a>函数不能有重名的参数</h3><p>正常模式下，如果函数有多个重名的参数，可以用arguments[i]读取。严格模式下，这属于语法错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line">　　function f(a, a, b) &#123; // 语法错误</span><br><span class="line">　　　　return ;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="setTimeout-0"><a href="#setTimeout-0" class="headerlink" title="setTimeout(0)"></a>setTimeout(0)</h1><h1 id="if-里为否的情况"><a href="#if-里为否的情况" class="headerlink" title="if 里为否的情况"></a>if 里为否的情况</h1><h1 id="对一个数组进行排序，奇数在前，偶数在后"><a href="#对一个数组进行排序，奇数在前，偶数在后" class="headerlink" title="对一个数组进行排序，奇数在前，偶数在后"></a>对一个数组进行排序，奇数在前，偶数在后</h1><h2 id="1-只用一个变量的方法"><a href="#1-只用一个变量的方法" class="headerlink" title="1.只用一个变量的方法"></a>1.只用一个变量的方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function sort(param)&#123;</span><br><span class="line">    let temp,arr=[...param];</span><br><span class="line">    for(let i=0,len=arr.length;i&lt;len;i++)&#123;</span><br><span class="line">        if(arr[i]%2&lt;1)&#123;</span><br><span class="line">            temp=arr[i];</span><br><span class="line">            for(let j=i;j&lt;len;j++)&#123;</span><br><span class="line">                if(arr[j]%2&gt;0)&#123;</span><br><span class="line">                    arr[i]=arr[j];</span><br><span class="line">                    arr[j]=temp;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br><span class="line">const arr=[0,2,4,5,6,7,9]</span><br><span class="line">console.log(sort(arr))</span><br></pre></td></tr></table></figure>
+<h2 id="2-将奇、偶两种数分成两个数组，最后连接"><a href="#2-将奇、偶两种数分成两个数组，最后连接" class="headerlink" title="2.将奇、偶两种数分成两个数组，最后连接"></a>2.将奇、偶两种数分成两个数组，最后连接</h2><h2 id="3-只遍历一次，将偶数push到数组最后，原来的位置用特殊标记占位，最后filter将特殊符号去除"><a href="#3-只遍历一次，将偶数push到数组最后，原来的位置用特殊标记占位，最后filter将特殊符号去除" class="headerlink" title="3.只遍历一次，将偶数push到数组最后，原来的位置用特殊标记占位，最后filter将特殊符号去除"></a>3.只遍历一次，将偶数push到数组最后，原来的位置用特殊标记占位，最后filter将特殊符号去除</h2><h1 id="对-ES6-有使用过哪些"><a href="#对-ES6-有使用过哪些" class="headerlink" title="对 ES6 有使用过哪些"></a>对 ES6 有使用过哪些</h1><h1 id="双等（-）和三等（-）的区别"><a href="#双等（-）和三等（-）的区别" class="headerlink" title="双等（&#x3D;&#x3D;）和三等（&#x3D;&#x3D;&#x3D;）的区别"></a>双等（&#x3D;&#x3D;）和三等（&#x3D;&#x3D;&#x3D;）的区别</h1>]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>左右布局</tag>
+        <tag>盒子模型</tag>
+        <tag>css画三角形</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象的程序设计</title>
+    <url>/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/2018/09/29/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>所有对象均继承自 Object</strong></p>
+<h1 id="创建对象的几种方法"><a href="#创建对象的几种方法" class="headerlink" title="创建对象的几种方法"></a>创建对象的几种方法</h1><h2 id="1-new-Object"><a href="#1-new-Object" class="headerlink" title="1. new Object()"></a>1. new Object()</h2><pre><code>    var person = new Object();
+    person.name = &quot;Nicholas&quot;;
+    person.age = 29;
+    person.job = &quot;Software Engineer&quot;;
+    person.sayName = function()&#123;
+    alert(this.name);
+    &#125;; 
+</code></pre>
+<h2 id="2-对象字面量"><a href="#2-对象字面量" class="headerlink" title="2. 对象字面量"></a>2. 对象字面量</h2><pre><code>    var person = &#123;
+    name: &quot;Nicholas&quot;,
+    age: 29,
+    job: &quot;Software Engineer&quot;,
+    sayName: function()&#123;
+    alert(this.name);
+    &#125;
+    &#125;; 
+</code></pre>
+<h2 id="3-工厂模式"><a href="#3-工厂模式" class="headerlink" title="3. 工厂模式"></a>3. 工厂模式</h2><pre><code>    function createPerson(name, age, job)&#123;
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function()&#123;
+    alert(this.name);
+    &#125;;
+    return o;
+    &#125;
+    var person1 = createPerson(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
+    var person2 = createPerson(&quot;Greg&quot;, 27, &quot;Doctor&quot;);
+</code></pre>
+<h2 id="4-构造函数模式"><a href="#4-构造函数模式" class="headerlink" title="4. 构造函数模式"></a>4. 构造函数模式</h2><pre><code>    function Person(name, age, job)&#123;
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function()&#123;
+    alert(this.name);
+    &#125;;
+    &#125;
+    var person1 = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
+    var person2 = new Person(&quot;Greg&quot;, 27, &quot;Doctor&quot;); 
+</code></pre>
+<h2 id="5-原型模式"><a href="#5-原型模式" class="headerlink" title="5. 原型模式"></a>5. 原型模式</h2><blockquote>
+<p>我们创建的每个函数都有一个 prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+</blockquote>
+<pre><code>    function Person()&#123;
+    &#125;
+    Person.prototype.name = &quot;Nicholas&quot;;
+    Person.prototype.age = 29;
+    Person.prototype.job = &quot;Software Engineer&quot;;
+    Person.prototype.sayName = function()&#123;
+    alert(this.name);
+    &#125;;
+    var person1 = new Person();
+    person1.sayName(); //&quot;Nicholas&quot;
+    var person2 = new Person(); 
+    person2.sayName(); //&quot;Nicholas&quot;
+    alert(person1.sayName == person2.sayName); //true 
+</code></pre>
+<h3 id="理解原型对象-hasOwnProperty"><a href="#理解原型对象-hasOwnProperty" class="headerlink" title="理解原型对象(hasOwnProperty)"></a>理解原型对象(hasOwnProperty)</h3><p>无论什么时候，只要创建了一个新函数，就会为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性包含一个指向 prototype 属性所在函数的指针。</p>
+<p>每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。搜索首先<br>从对象实例本身开始。如果<strong>在实例中</strong>找到了具有给定名字的属性，则返回该属性的值；如果没有找到，<br>则继续搜索指针指向的<strong>原型对象</strong>，在原型对象中查找具有给定名字的属性。如果在原型对象中找到了这<br>个属性，则返回该属性的值。<strong>（实例中没有才会搜索原型对象）</strong></p>
+<p>使用 <code>hasOwnProperty()</code>方法可以检测一个属性是存在于实例中，还是存在于原型中(只在给定属性存在于对象实例中时，才会返回 true)。</p>
+<h3 id="原型与-in-操作符-in"><a href="#原型与-in-操作符-in" class="headerlink" title="原型与 in 操作符(in)"></a>原型与 in 操作符(in)</h3><p>有两种方式使用 <code>in</code> 操作符：单独使用和在 for-in 循环中使用。在单独使用时，in 操作符会在通<br>过对象能够访问给定属性时返回 true，<strong>无论该属性存在于实例中还是原型中</strong>。</p>
+<h3 id="更简单的原型语法"><a href="#更简单的原型语法" class="headerlink" title="更简单的原型语法"></a>更简单的原型语法</h3><pre><code>    function Person()&#123;
+    &#125;
+    Person.prototype = &#123;
+    name : &quot;Nicholas&quot;,
+    age : 29,
+    job: &quot;Software Engineer&quot;,
+    sayName : function () &#123;
+    alert(this.name);
+    &#125;
+    &#125;; 
+</code></pre>
+<p>这里使用的语法，本质上完全<strong>重写</strong>了默认的 prototype 对象，因此 constructor 属性也就变成了新<br>对象的 constructor 属性（指向 Object 构造函数），不再指向 Person 函数。此时，尽管 instanceof<br>操作符还能返回正确的结果，但通过 constructor 已经无法确定对象的类型了。</p>
+<h3 id="原型的动态性"><a href="#原型的动态性" class="headerlink" title="原型的动态性"></a>原型的动态性</h3><p>在prototype 内添加属性、方法，不管是在实例化之前还是之后，实例化的对象都能够访问到。</p>
+<p>但是整个原型对象重写除外。实例被创建时有一个指向原型的指针，一旦原型被重写，实例没办法指向新的原型。</p>
+<pre><code>    function Person()&#123;
+    &#125;
+    var friend = new Person();
+
+    Person.prototype = &#123;//整个原型被重写
+    constructor: Person,
+    name : &quot;Nicholas&quot;,
+    age : 29,
+    job : &quot;Software Engineer&quot;,
+    sayName : function () &#123;
+    alert(this.name);
+    &#125;
+    &#125;;
+    friend.sayName(); //error
+</code></pre>
+<h3 id="原生对象的原型"><a href="#原生对象的原型" class="headerlink" title="原生对象的原型"></a>原生对象的原型</h3><blockquote>
+<p>原型模式的重要性不仅体现在创建自定义类型方面，就连所有原生的引用类型，都是采用这种模式<br>创建的。所有原生引用类型（Object、Array、String，等等）都在其构造函数的原型上定义了方法。</p>
+</blockquote>
+<h3 id="原型对象的问题"><a href="#原型对象的问题" class="headerlink" title="原型对象的问题"></a>原型对象的问题</h3><ol>
+<li><p>它省略了为构造函数<strong>传递初始化参数</strong>这一环节，结果所有实例在<br>默认情况下都将取得相同的属性值.</p>
+</li>
+<li><p>原型中所有属性是被很多实例<strong>共享</strong>的，这种共享对于函数非常合适。对于那些包含基本值的属性倒<br>也说得过去，然而，对于包含引用类型值的属性来说，问题就比较突出了.</p>
+<pre><code> function Person()&#123;
+ &#125;
+ Person.prototype = &#123;
+ constructor: Person,
+ name : &quot;Nicholas&quot;,
+ age : 29,
+ job : &quot;Software Engineer&quot;,
+ friends : [&quot;Shelby&quot;, &quot;Court&quot;],
+ sayName : function () &#123;
+ alert(this.name);
+ &#125;
+ &#125;;
+ var person1 = new Person();
+ var person2 = new Person();
+ person1.friends.push(&quot;Van&quot;);
+ alert(person1.friends); //&quot;Shelby,Court,Van&quot;
+ alert(person2.friends); //&quot;Shelby,Court,Van&quot;
+ alert(person1.friends === person2.friends); //true
+</code></pre>
+</li>
+</ol>
+<h2 id="6-组合使用构造函数模式和原型模式"><a href="#6-组合使用构造函数模式和原型模式" class="headerlink" title="6. 组合使用构造函数模式和原型模式"></a>6. 组合使用构造函数模式和原型模式</h2><p><em>比较</em></p>
+<p>1、2两种方法，对于创建很多相同结构对象的时候，不会产生冗余代码；<br>构造函数相对于工厂模式的优势在于能够使用 constructor 属性 及 instanceof 操作符去识别对象。<code>instanceof比constructor更准确，在prototype被重写的情况下，constructor不能确定对象的类型。</code></p>
+<pre><code>    alert(person1.constructor == Person); //true 
+    alert(person1 instanceof Object); //true 
+    alert(person1 instanceof Person); //true 
+</code></pre>
+<p>未完，待续…内容太多了 </p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+</search>
